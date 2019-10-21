@@ -19,14 +19,16 @@
         </activity>
         <activity android:name=".ui.main.MainActivity"
             android:screenOrientation="portrait"
-            />
+        />
         <activity android:name=".ui.welcome.WelcomeActivity"
+            android:screenOrientation="portrait"
+        />
+        <activity android:name=".ui.signup.SignupActivity"
             android:screenOrientation="portrait"
             />
         <activity android:name=".ui.welcome.SigninActivity"
             android:screenOrientation="portrait"
             />
-
     </application>
 
 </manifest>
