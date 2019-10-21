@@ -16,9 +16,28 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            debuggable true
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "environment"
+    productFlavors {
+        staging {
+            applicationId "com.example.triplan_staging"
+            versionCode 1
+            versionName "0.1.0"
+        }
+
+        production {
+            applicationId "com.example.triplan"
+            versionCode 1
+            versionName "0.1.0"
         }
     }
 }
