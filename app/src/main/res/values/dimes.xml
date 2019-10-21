@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top_title_text_text_size">40sp</dimen>
+    <dimen name="top_title_text_margin_bottom">200dp</dimen>
+
+    <dimen name="create_account_button_width">300dp</dimen>
+    <dimen name="create_account_button_height">43dp</dimen>
+    <dimen name="create_account_button_elevation">10dp</dimen>
+    <dimen name="create_account_button_margin_top">300dp</dimen>
+
+    <dimen name="have_account_text_margin_top">10dp</dimen>
+</resources>

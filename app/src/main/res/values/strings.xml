@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">triplan</string>
+    <string name="app_name_upper">TRIPLAN</string>
+
+    <string name="create_account_button_text">create new account</string>
+
+    <string name="have_account_text">already have account</string>
 </resources>

@@ -4,15 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".ui.main.MainActivity">
     <TextView
+        android:id="@+id/topTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/app_name_upper"
+        android:textSize="@dimen/top_title_text_text_size"
+        android:textColor="@color/triplan_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="@dimen/top_title_text_margin_bottom"
+    />
+    
+    <Button
+        android:id="@+id/createAccountButton"
+        android:layout_width="@dimen/create_account_button_width"
+        android:layout_height="@dimen/create_account_button_height"
+        android:text="@string/create_account_button_text"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:background="@color/triplan_blue"
+        android:elevation="@dimen/create_account_button_elevation"
+        android:layout_marginTop="@dimen/create_account_button_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+    />
+
+    <TextView
+        android:id="@+id/haveAccountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_account_text"
+        android:textColor="@color/triplan_gray"
+        android:layout_marginTop="@dimen/have_account_text_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/createAccountButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
