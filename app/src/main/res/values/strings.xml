@@ -5,4 +5,21 @@
     <string name="create_account_button_text">create new account</string>
 
     <string name="have_account_text">already have account</string>
+    <string name="sign_up_button_text">create</string>
+    <string name="sign_up_title_text">Welcome</string>
+    <string name="sign_up_text_name_text">name:</string>
+    <string name="sign_up_text_name_form_hint">please input your username</string>
+    <string name="sign_up_text_email_text">email:</string>
+    <string name="sign_up_text_email_form_hint">please input your email</string>
+    <string name="sign_up_text_password_text">password:</string>
+    <string name="sign_up_text_password_form_hint">please input your password</string>
+    <string name="sign_up_text_age_text">age:</string>
+    <string name="sign_up_text_gender_text">gender:</string>
+    <string-array name="sign_up_text_gender_form_array_text">
+        <item>gentle</item>
+        <item>lady</item>
+    </string-array>
+    <string name="sign_up_text_nearest_station_text">nearest station:</string>
+    <string name="sign_up_text_nearest_station_line">line</string>
+    <string name="sign_up_text_nearest_station_station">station</string>
 </resources>
