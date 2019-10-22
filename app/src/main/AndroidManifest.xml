@@ -23,7 +23,7 @@
         <activity android:name=".ui.welcome.WelcomeActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".ui.welcome.SigninActivity"
+        <activity android:name=".ui.signin.SigninActivity"
             android:screenOrientation="portrait"
             />
 
