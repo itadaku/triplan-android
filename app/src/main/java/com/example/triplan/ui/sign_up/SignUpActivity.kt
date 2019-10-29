@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
+import com.example.triplan.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_sing_up.*
 
 class SignUpActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
         nearestStationStationSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         signUpSpinnerNearestStationStation.adapter = nearestStationStationSpinnerAdapter
         signUpButton.setOnClickListener {
-
+            MainActivity.start(this)
         }
     }
 

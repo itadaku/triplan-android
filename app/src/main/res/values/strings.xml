@@ -22,4 +22,10 @@
     <string name="sign_up_text_nearest_station_text">nearest station:</string>
     <string name="sign_up_text_nearest_station_line">line</string>
     <string name="sign_up_text_nearest_station_station">station</string>
+
+    <string name="main_bottom_navigation_item_title_home">home</string>
+    <string name="main_bottom_navigation_item_title_suggest">suggest</string>
+    <string name="main_bottom_navigation_item_title_now">now</string>
+    <string name="main_bottom_navigation_item_title_community">community</string>
+    <string name="main_bottom_navigation_item_title_setting">setting</string>
 </resources>
