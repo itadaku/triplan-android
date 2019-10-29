@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main_fragment_navigation"
+    app:startDestination="@id/navigation_top" >
+    <main_custom_fragment
+        android:id="@+id/navigation_top"
+        android:name="com.example.triplan.ui.top.TopFragment"
+        android:label="topFragment" />
+    <main_custom_fragment
+        android:id="@+id/navigation_suggest"
+        android:name="com.example.triplan.ui.suggest.SuggestFragment"
+        android:label="suggestFragment" />
+    <main_custom_fragment
+        android:id="@+id/navigation_now"
+        android:name="com.example.triplan.ui.now.NowFragment"
+        android:label="nowFragment" />
+    <main_custom_fragment
+        android:id="@+id/navigation_community"
+        android:name="com.example.triplan.ui.community.CommunityFragment"
+        android:label="communityFragment" />
+    <main_custom_fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.triplan.ui.setting.SettingFragment"
+        android:label="settingFragment" />
+</navigation>
