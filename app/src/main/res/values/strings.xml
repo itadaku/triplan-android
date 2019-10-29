@@ -5,4 +5,12 @@
     <string name="create_account_button_text">create new account</string>
 
     <string name="have_account_text">already have account</string>
+
+    <string name="sign_in_title_text">Welcome Back</string>
+    <string name="sign_in_text_email_text">email:</string>
+    <string name="sign_in_text_password_text">password:</string>
+    <string name="sign_in_button_text">sign in</string>
+    <string name="sign_in_text_email_form_hint">please input your email</string>
+    <string name="sign_in_text_password_form_hint">please input your password</string>
+    
 </resources>
