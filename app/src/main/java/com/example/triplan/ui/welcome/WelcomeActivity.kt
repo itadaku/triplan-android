@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
-import com.example.triplan.ui.signin.SigninActivity
+import com.example.triplan.ui.sign_in.SignInActivity
 import com.example.triplan.ui.signup.SignupActivity
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -19,7 +19,7 @@ class WelcomeActivity : AppCompatActivity() {
         }
 
         haveAccountText.setOnClickListener {
-            SigninActivity.start(this)
+            SignInActivity.start(this)
         }
     }
 
