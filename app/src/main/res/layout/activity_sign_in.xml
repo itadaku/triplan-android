@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@id/signInTextEmailForm" />
 
     <EditText
-        android:id="@+id/editSignInPassword"
+        android:id="@+id/signInTextPasswordForm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sign_in_text_form_height"
         android:inputType="textPassword"
