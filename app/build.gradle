@@ -44,23 +44,21 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // android kotlin
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.core:core-ktx:$coreKtxVersion"
     // design
-    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "com.android.support:design:$supportPackageVersion"
     // other
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    // android navigation
-//    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
-//    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
 
     // navigation architecture
-    implementation "android.arch.navigation:navigation-fragment:$architecture_navigation_version"
-    implementation "android.arch.navigation:navigation-ui:$architecture_navigation_version"
-    implementation "android.arch.navigation:navigation-fragment-ktx:$architecture_navigation_version"
-    implementation "android.arch.navigation:navigation-ui-ktx:$architecture_navigation_version"
+    implementation "android.arch.navigation:navigation-fragment:$architectureNavigationVersion"
+    implementation "android.arch.navigation:navigation-ui:$architectureNavigationVersion"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$architectureNavigationVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$architectureNavigationVersion"
 }

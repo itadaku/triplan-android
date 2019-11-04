@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainHostFragmentLayout"
         android:layout_width="0dp"
