@@ -35,4 +35,6 @@
     <string name="sign_in_button_text">sign in</string>
     <string name="sign_in_text_email_form_hint">please input your email</string>
     <string name="sign_in_text_password_form_hint">please input your password</string>
+
+    <string name="top_fragment_title_text">Top</string>
 </resources>
