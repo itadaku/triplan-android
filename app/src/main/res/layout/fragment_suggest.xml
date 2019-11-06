@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/suggestFragmentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.suggest.SuggestFragment" >
@@ -44,6 +45,7 @@
             android:id="@+id/suggestTextPurposeForm"
             android:layout_width="match_parent"
             android:layout_height="@dimen/suggest_general_height"
+            android:inputType="text"
             android:textSize="@dimen/suggest_general_text_size"
             android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
             android:layout_marginEnd="@dimen/suggest_text_form_purpose_margin_end"
@@ -95,6 +97,7 @@
             android:id="@+id/suggestTextBudgetMinForm"
             android:layout_width="@dimen/suggest_text_form_budget_width"
             android:layout_height="@dimen/suggest_general_height"
+            android:inputType="number"
             android:textSize="@dimen/suggest_general_text_size"
             android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
             android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
@@ -130,6 +133,7 @@
             android:id="@+id/suggestTextBudgetMaxForm"
             android:layout_width="@dimen/suggest_text_form_budget_width"
             android:layout_height="@dimen/suggest_general_height"
+            android:inputType="number"
             android:textSize="@dimen/suggest_general_text_size"
             android:layout_marginStart="@dimen/suggest_text_form_budget_max_margin_start"
             android:layout_marginEnd="@dimen/suggest_text_form_budget_margin_end"
@@ -151,7 +155,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/suggestTextBudgetdollar2"/>
 
-        <EditText
+        <TextView
             android:id="@+id/suggestTextTimeFromForm"
             android:layout_width="@dimen/suggest_text_form_time_width"
             android:layout_height="@dimen/suggest_general_height"
@@ -175,7 +179,7 @@
             app:layout_constraintEnd_toStartOf="@id/suggestTextTimeToForm"
             app:layout_constraintTop_toBottomOf="@id/suggestTextTime"/>
 
-        <EditText
+        <TextView
             android:id="@+id/suggestTextTimeToForm"
             android:layout_width="@dimen/suggest_text_form_time_width"
             android:layout_height="@dimen/suggest_general_height"
