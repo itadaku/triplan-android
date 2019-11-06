@@ -53,8 +53,9 @@
     <dimen name="suggest_title_text_margin_start">20dp</dimen>
     <dimen name="suggest_title_text_margin_top">17sp</dimen>
     <dimen name="suggest_frame_width">290dp</dimen>
-    <dimen name="suggest_frame_height">395dp</dimen>
+    <dimen name="suggest_frame_height">355dp</dimen>
     <dimen name="suggest_frame_margin_top">77dp</dimen>
+    <dimen name="suggest_frame_elevation">2dp</dimen>
     <dimen name="suggest_general_text_size">18sp</dimen>
     <dimen name="suggest_general_height">40dp</dimen>
     <dimen name="suggest_text_general_margin_start">19dp</dimen>
@@ -63,8 +64,8 @@
     <dimen name="suggest_text_tag_text_size">16sp</dimen>
     <dimen name="suggest_text_tag_margin_top">10dp</dimen>
     <dimen name="suggest_text_tag_padding">15dp</dimen>
-    <dimen name="suggest_text_budget_margin_top">85dp</dimen>
-    <dimen name="suggest_text_time_margin_top">72dp</dimen>
+    <dimen name="suggest_text_budget_margin_top">65dp</dimen>
+    <dimen name="suggest_text_time_margin_top">52dp</dimen>
     <dimen name="suggest_text_form_general_margin_start">25dp</dimen>
     <dimen name="suggest_text_form_general_padding_horizon">10dp</dimen>
     <dimen name="suggest_text_form_purpose_margin_end">33dp</dimen>
@@ -75,5 +76,6 @@
     <dimen name="suggest_text_form_time_margin_end">25dp</dimen>
     <dimen name="suggest_button_width">290dp</dimen>
     <dimen name="suggest_button_margin_top">70dp</dimen>
+    <dimen name="suggest_button_elevation">5dp</dimen>
 
 </resources>

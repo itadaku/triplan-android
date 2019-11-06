@@ -15,13 +15,12 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.triplan.R
-import com.example.triplan.ui.time_picker.TimePickerFragment
 import java.text.SimpleDateFormat
 import java.time.MonthDay
 import java.util.*
 import kotlin.math.min
 
-class SuggestFragment: Fragment(),TimePickerFragment.OnTimeSelectedListener,View.OnClickListener {
+class SuggestFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,49 +29,26 @@ class SuggestFragment: Fragment(),TimePickerFragment.OnTimeSelectedListener,View
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_suggest, container, false)
-        val textViewFrom = view.findViewById<TextView>(R.id.suggestTextTimeFromForm)
-        textViewFrom.setOnClickListener{
+        val textViewFromTime = view.findViewById<TextView>(R.id.suggestTextTimeFromForm)
+        val textViewToTime = view.findViewById<TextView>(R.id.suggestTextTimeToForm)
+        textViewFromTime.setOnClickListener{
             val cal = Calendar.getInstance()
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-                textViewFrom.text = SimpleDateFormat("HH:mm").format(cal.time)
+                textViewFromTime.text = SimpleDateFormat("HH:mm").format(cal.time)
+            }
+            TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+        textViewToTime.setOnClickListener{
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.MINUTE, minute)
+                textViewToTime.text = SimpleDateFormat("HH:mm").format(cal.time)
             }
             TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
         }
         return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-/*
-        val button02 = view.findViewById<TextView>(R.id.suggestTextTimeFromForm)
-        button02.setOnClickListener(new View.OnClickListener(){
-            override fun onClick(View view) {
-
-                val timePicker = TimePickerFragment()
-                val fragmentManager = getFragmentManager()
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.su)
-                timePicker.show(supportFragmentManager, "time_picker")
-            }
-        })
-        */
-    }
-
-    override fun onClick(p0: View?) {
-        //val manager = activity.supportFragmentManager
-        val timePicker = TimePickerFragment()
-        val fragmentManager = getFragmentManager()
-        val transaction = fragmentManager?.beginTransaction()
-        //transaction.replace(R.id.su)
-        transaction?.add(R.id.suggestFragmentLayout, timePicker)
-        transaction?.commit()
-        //timePicker.show(manager, "time_picker")
-    }
-
-    override fun onSelected(hour: Int, minute: Int) {
-        print(hour)
-        print(minute)
     }
 }
