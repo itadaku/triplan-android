@@ -55,7 +55,8 @@
     <dimen name="top_fragment_title_text_text_size">25sp</dimen>
     <dimen name="top_fragment_title_text_margin_start">25dp</dimen>
     <dimen name="top_fragment_title_text_margin_top">25dp</dimen>
-
+    <dimen name="top_fragment_contents_list_recycler_view_margin_start">25dp</dimen>
+    <dimen name="top_fragment_contents_list_recycler_view_margin_top">20dp</dimen>
     <!-- tag of TopFragment's contents -->
     <dimen name="tag_item_text_size">16sp</dimen>
     <dimen name="tag_item_padding_horizontal">10dp</dimen>
@@ -63,8 +64,8 @@
     <dimen name="tag_item_margin_horizontal">4dp</dimen>
 
     <!--  contents of TopFragment   -->
+    <dimen name="top_contents_margin_start">20dp</dimen>
     <dimen name="top_contents_title_text_size">18sp</dimen>
-    <dimen name="top_contents_title_margin_start">17dp</dimen>
     <dimen name="top_contents_recycler_view_margin_top">10dp</dimen>
 
     <!-- a content of TopFragment -->

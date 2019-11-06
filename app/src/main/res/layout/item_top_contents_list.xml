@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/top_contents_title_text_size"
         android:textColor="@color/triplan_black"
-        android:layout_marginStart="@dimen/top_contents_title_margin_start"
+        android:layout_marginStart="@dimen/top_contents_margin_start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@sample/contents.json/content_group/title" />
@@ -19,6 +19,7 @@
         android:id="@+id/topContentsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/top_contents_margin_start"
         android:layout_marginTop="@dimen/top_contents_recycler_view_margin_top"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
