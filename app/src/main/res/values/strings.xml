@@ -43,7 +43,5 @@
     <string name="suggest_text_time">時間</string>
     <string name="suggest_text_dollar">¥</string>
     <string name="suggest_text_tilde">~</string>
-    <string name="suggest_text_hint_time_from">出発時間</string>
-    <string name="suggest_text_hint_time_to">帰宅時間</string>
     <string name="suggest_button_propose">提案</string>
 </resources>

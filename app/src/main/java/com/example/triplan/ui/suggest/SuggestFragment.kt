@@ -1,14 +1,13 @@
 package com.example.triplan.ui.suggest
 
+import android.app.DatePickerDialog
 import android.app.Dialog
-import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.TimePicker
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -17,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.triplan.R
 import java.text.SimpleDateFormat
 import java.time.MonthDay
-import java.util.*
+import java.util.Calendar
 import kotlin.math.min
 
 class SuggestFragment: Fragment() {
@@ -33,21 +32,23 @@ class SuggestFragment: Fragment() {
         val textViewToTime = view.findViewById<TextView>(R.id.suggestTextTimeToForm)
         textViewFromTime.setOnClickListener{
             val cal = Calendar.getInstance()
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
-                cal.set(Calendar.HOUR_OF_DAY, hour)
-                cal.set(Calendar.MINUTE, minute)
-                textViewFromTime.text = SimpleDateFormat("HH:mm").format(cal.time)
+            val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, month)
+                cal.set(Calendar.DAY_OF_MONTH, day)
+                textViewFromTime.text = SimpleDateFormat("YYYY/MM/dd").format(cal.time)
             }
-            TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+            DatePickerDialog(this.requireContext(), dateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
         }
         textViewToTime.setOnClickListener{
             val cal = Calendar.getInstance()
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
-                cal.set(Calendar.HOUR_OF_DAY, hour)
-                cal.set(Calendar.MINUTE, minute)
-                textViewToTime.text = SimpleDateFormat("HH:mm").format(cal.time)
+            val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, month)
+                cal.set(Calendar.DAY_OF_MONTH, day)
+                textViewToTime.text = SimpleDateFormat("YYYY/MM/dd").format(cal.time)
             }
-            TimePickerDialog(context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+            DatePickerDialog(this.requireContext(), dateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
         }
         return view
     }

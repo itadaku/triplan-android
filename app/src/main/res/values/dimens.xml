@@ -73,6 +73,7 @@
     <dimen name="suggest_text_form_budget_margin_end">55dp</dimen>
     <dimen name="suggest_text_form_budget_max_margin_start">10dp</dimen>
     <dimen name="suggest_text_form_time_width">100dp</dimen>
+    <dimen name="suggest_text_form_time_text_size">15sp</dimen>
     <dimen name="suggest_text_form_time_margin_end">25dp</dimen>
     <dimen name="suggest_button_width">290dp</dimen>
     <dimen name="suggest_button_margin_top">70dp</dimen>
