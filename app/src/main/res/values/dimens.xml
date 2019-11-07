@@ -8,6 +8,7 @@
     <dimen name="create_account_button_elevation">10dp</dimen>
     <dimen name="create_account_button_margin_top">300dp</dimen>
 
+    <!-- SignUpActivity   -->
     <dimen name="have_account_text_margin_top">10dp</dimen>
 
     <dimen name="sign_up_title_text_size">32sp</dimen>
@@ -33,6 +34,7 @@
     <dimen name="sign_up_button_height">50dp</dimen>
     <dimen name="sign_up_button_text_size">20sp</dimen>
 
+    <!--  SignInActivity  -->
     <dimen name="sign_in_title_text_size">32sp</dimen>
     <dimen name="sign_in_title_text_margin_start">20dp</dimen>
     <dimen name="sign_in_title_text_margin_top">45sp</dimen>
@@ -48,4 +50,39 @@
     <dimen name="sign_in_text_form_padding_end">0dp</dimen>
     <dimen name="sign_in_button_text_size">20sp</dimen>
     <dimen name="sign_in_button_height">50dp</dimen>
+
+    <!-- TopFragment -->
+    <dimen name="top_fragment_title_text_text_size">25sp</dimen>
+    <dimen name="top_fragment_title_text_margin_start">25dp</dimen>
+    <dimen name="top_fragment_title_text_margin_top">25dp</dimen>
+    <dimen name="top_fragment_contents_list_recycler_view_margin_start">25dp</dimen>
+    <dimen name="top_fragment_contents_list_recycler_view_margin_top">20dp</dimen>
+    <!-- tag of TopFragment's contents -->
+    <dimen name="tag_item_text_size">16sp</dimen>
+    <dimen name="tag_item_padding_horizontal">10dp</dimen>
+    <dimen name="tag_item_padding_vertical">5dp</dimen>
+    <dimen name="tag_item_margin_horizontal">4dp</dimen>
+
+    <!--  contents of TopFragment   -->
+    <dimen name="top_contents_margin_start">20dp</dimen>
+    <dimen name="top_contents_title_text_size">18sp</dimen>
+    <dimen name="top_contents_recycler_view_margin_top">10dp</dimen>
+
+    <!-- a content of TopFragment -->
+    <dimen name="top_content_layout_width">345dp</dimen>
+    <dimen name="top_content_layout_height">275dp</dimen>
+    <dimen name="top_content_layout_margin_end">10dp</dimen>
+    <dimen name="top_content_margin_start">20dp</dimen>
+    <dimen name="top_content_text_size">14sp</dimen>
+    <dimen name="top_content_title_text_size">20sp</dimen>
+    <dimen name="top_content_title_text_margin_bottom">10dp</dimen>
+    <dimen name="top_content_tag_recycler_view_margin_bottom">10dp</dimen>
+    <dimen name="top_content_info_layout_margin_bottom">15dp</dimen>
+    <dimen name="top_content_review_image_view_width">15dp</dimen>
+    <dimen name="top_content_review_image_view_height">15dp</dimen>
+    <dimen name="top_content_review_text_margin_start">3dp</dimen>
+    <dimen name="top_content_people_text_margin_start">3dp</dimen>
+    <dimen name="top_content_place_text_margin_start">3dp</dimen>
+    <dimen name="top_content_stays_text_margin_start">3dp</dimen>
+    <dimen name="top_content_budget_text_margin_end">20dp</dimen>
 </resources>

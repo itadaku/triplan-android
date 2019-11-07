@@ -61,4 +61,7 @@ dependencies {
     implementation "android.arch.navigation:navigation-ui:$architectureNavigationVersion"
     implementation "android.arch.navigation:navigation-fragment-ktx:$architectureNavigationVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$architectureNavigationVersion"
+
+    // recycler view
+    implementation "com.android.support:recyclerview-v7:$recyclerViewVersion"
 }
