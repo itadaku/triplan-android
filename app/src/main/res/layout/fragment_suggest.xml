@@ -24,10 +24,10 @@
         android:id="@+id/suggestFrame"
         android:layout_width="@dimen/suggest_frame_width"
         android:layout_height="@dimen/suggest_frame_height"
-        android:layout_marginTop="@dimen/suggest_frame_margin_top"
         android:elevation="@dimen/suggest_frame_elevation"
         android:background="@drawable/suggest_inner_background"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <TextView
