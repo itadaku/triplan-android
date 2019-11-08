@@ -64,4 +64,9 @@ dependencies {
 
     // recycler view
     implementation "com.android.support:recyclerview-v7:$recyclerViewVersion"
+
+    // fire base
+    implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'

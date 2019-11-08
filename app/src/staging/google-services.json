@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "626144745837",
+    "firebase_url": "https://triplan-staging-a77b3.firebaseio.com",
+    "project_id": "triplan-staging-a77b3",
+    "storage_bucket": "triplan-staging-a77b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626144745837:android:685cdc1335abd66e8ba264",
+        "android_client_info": {
+          "package_name": "com.example.triplan_staging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626144745837-0jdua2ts5iku07p8naeu0dspkaiepicg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.triplan_staging",
+            "certificate_hash": "57eeec6c71a3dd4a8b1d8ed70592e9d4fa236246"
+          }
+        },
+        {
+          "client_id": "626144745837-tu2h00ku0muf4eqcuhhgsiug4csvf6ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOt5o9m-ATcAq9tSPL-8GU-Q9-UJGJl6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626144745837-tu2h00ku0muf4eqcuhhgsiug4csvf6ns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

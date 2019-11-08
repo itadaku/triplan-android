@@ -26,6 +26,8 @@
         android:text="@string/create_account_button_text"
         android:textColor="#ffffff"
         android:textAllCaps="false"
+        android:textAlignment="center"
+        android:gravity="center"
         android:background="@color/triplan_blue"
         android:elevation="@dimen/create_account_button_elevation"
         android:layout_marginTop="@dimen/create_account_button_margin_top"
