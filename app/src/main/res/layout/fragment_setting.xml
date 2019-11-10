@@ -6,12 +6,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.setting.SettingFragment" >
     <TextView
+        android:id="@+id/settingFragmentTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="setting"
+        android:text="Setting"
+        android:textSize="25sp"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/settingRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settingFragmentTitleText"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/item_setting"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
