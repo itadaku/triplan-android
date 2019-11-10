@@ -37,4 +37,6 @@
     <string name="sign_in_text_password_form_hint">please input your password</string>
 
     <string name="top_fragment_title_text">Top</string>
+
+    <string name="setting_fragment_title_text">Setting</string>
 </resources>

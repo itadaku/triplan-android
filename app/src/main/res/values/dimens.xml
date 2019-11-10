@@ -85,4 +85,21 @@
     <dimen name="top_content_place_text_margin_start">3dp</dimen>
     <dimen name="top_content_stays_text_margin_start">3dp</dimen>
     <dimen name="top_content_budget_text_margin_end">20dp</dimen>
+    
+    <!-- SettingFragment -->
+    <dimen name="setting_fragment_title_text_text_size">25sp</dimen>
+    <dimen name="setting_fragment_title_text_margin_start">25dp</dimen>
+    <dimen name="setting_fragment_title_text_margin_top">25dp</dimen>
+    <dimen name="setting_fragment_recycler_view_margin_top">40dp</dimen>
+    
+    <!-- items of SettingFragment -->
+    <dimen name="setting_item_height">58dp</dimen>
+    <dimen name="setting_item_elevation">2dp</dimen>
+    <dimen name="setting_item_margin_horizon">18dp</dimen>
+    <dimen name="setting_item_margin_bottom">29dp</dimen>
+    <dimen name="setting_item_circle_width">10dp</dimen>
+    <dimen name="setting_item_circle_height">10dp</dimen>
+    <dimen name="setting_item_circle_margin_start">8dp</dimen>
+    <dimen name="setting_item_text_text_size">16sp</dimen>
+    <dimen name="setting_item_text_padding_start">10dp</dimen>
 </resources>

@@ -8,26 +8,25 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import kotlinx.android.synthetic.main.item_setting.view.*
 
 
-class SettingRecyclerViewAdapter(private val settingTextList: Array<String>):
-        RecyclerView.Adapter<SettingRecyclerViewAdapter.SettingViewHolder>() {
+class SettingRecyclerViewAdapter(
+    private val settingLists: List<String>
+): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    class SettingViewHolder(textView: ConstraintLayout) : RecyclerView.ViewHolder(textView) {
-        val nameView: TextView = textView.findViewById(R.id.settingText)
+    override fun getItemCount(): Int {
+        return settingLists.size
     }
 
-    override fun getItemCount() = settingTextList.size
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SettingRecyclerViewAdapter.SettingViewHolder {
-        Log.d("adapter_oncreate", "onCreateViewHolder()")
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val textView = inflater.inflate(R.layout.item_setting, parent, false) as ConstraintLayout
-        return SettingViewHolder(textView)
+        //val textView = inflater.inflate(R.layout.item_setting, parent, false) as ConstraintLayout
+        //return ViewHolder(textView)
+        return ViewHolder.create(inflater, parent, R.layout.item_setting)
     }
 
-    override fun onBindViewHolder(holder: SettingViewHolder, position: Int) {
-        Log.d("adapter_bind", "onBindViewHolder()")
-        holder.nameView.text = settingTextList[position]
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.itemView.settingText.text = settingLists[position]
     }
 }
