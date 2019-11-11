@@ -36,5 +36,14 @@
     <string name="sign_in_text_email_form_hint">please input your email</string>
     <string name="sign_in_text_password_form_hint">please input your password</string>
 
+    <string name="suggest_title_text">Suggest</string>
+    <string name="suggest_text_purpose">目的</string>
+    <string name="suggest_text_tag">海</string>
+    <string name="suggest_text_budget">予算</string>
+    <string name="suggest_text_time">時間</string>
+    <string name="suggest_text_dollar">¥</string>
+    <string name="suggest_text_tilde">~</string>
+    <string name="suggest_button_propose">提案</string>
+  
     <string name="top_fragment_title_text">Top</string>
 </resources>

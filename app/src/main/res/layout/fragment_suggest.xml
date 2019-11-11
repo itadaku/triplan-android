@@ -1,16 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/suggestFragmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".ui.suggest.SuggestFragment" >
+
     <TextView
+        android:id="@+id/suggestTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="suggest"
+        android:text="@string/suggest_title_text"
+        android:textSize="@dimen/suggest_title_text_size"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="@dimen/suggest_title_text_margin_start"
+        android:layout_marginTop="@dimen/suggest_title_text_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/suggestFrame"
+        android:layout_width="@dimen/suggest_frame_width"
+        android:layout_height="@dimen/suggest_frame_height"
+        android:elevation="@dimen/suggest_frame_elevation"
+        android:background="@drawable/suggest_inner_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/suggestTextPurpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest_text_purpose"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/suggestTextPurposeForm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/suggest_general_height"
+            android:inputType="text"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
+            android:layout_marginEnd="@dimen/suggest_text_form_purpose_margin_end"
+            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
+            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextPurpose"/>
+
+        <TextView
+            android:id="@+id/suggestTextTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest_text_tag"
+            android:textSize="@dimen/suggest_text_tag_text_size"
+            android:textColor="@color/triplan_blue"
+            android:background="@drawable/suggest_text_tag"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="@dimen/suggest_text_tag_margin_top"
+            android:paddingStart="@dimen/suggest_text_tag_padding"
+            android:paddingEnd="@dimen/suggest_text_tag_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextPurposeForm"
+            />
+
+        <TextView
+            android:id="@+id/suggestTextBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest_text_budget"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="@dimen/suggest_text_budget_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextPurposeForm"/>
+
+        <TextView
+            android:id="@+id/suggestTextBudgetdollar1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/suggest_general_height"
+            android:text="@string/suggest_text_dollar"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:paddingTop="@dimen/suggest_text_general_padding_top"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMinForm"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+
+        <EditText
+            android:id="@+id/suggestTextBudgetMinForm"
+            android:layout_width="@dimen/suggest_text_form_budget_width"
+            android:layout_height="@dimen/suggest_general_height"
+            android:inputType="number"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
+            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
+            android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetTilde"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget" />
+
+        <TextView
+            android:id="@+id/suggestTextBudgetTilde"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/suggest_general_height"
+            android:text="@string/suggest_text_tilde"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:paddingTop="@dimen/suggest_text_general_padding_top"
+            app:layout_constraintStart_toEndOf="@id/suggestTextBudgetMinForm"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMaxForm"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+
+        <TextView
+            android:id="@+id/suggestTextBudgetdollar2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/suggest_general_height"
+            android:text="@string/suggest_text_dollar"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:paddingTop="@dimen/suggest_text_general_padding_top"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMaxForm"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+
+        <EditText
+            android:id="@+id/suggestTextBudgetMaxForm"
+            android:layout_width="@dimen/suggest_text_form_budget_width"
+            android:layout_height="@dimen/suggest_general_height"
+            android:inputType="number"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:layout_marginStart="@dimen/suggest_text_form_budget_max_margin_start"
+            android:layout_marginEnd="@dimen/suggest_text_form_budget_margin_end"
+            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
+            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
+            app:layout_constraintStart_toEndOf="@id/suggestTextBudgetTilde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+
+        <TextView
+            android:id="@+id/suggestTextTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest_text_time"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="@dimen/suggest_text_time_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudgetdollar2"/>
+
+        <TextView
+            android:id="@+id/suggestTextTimeFromForm"
+            android:layout_width="@dimen/suggest_text_form_time_width"
+            android:layout_height="@dimen/suggest_general_height"
+            android:textSize="@dimen/suggest_text_form_time_text_size"
+            android:textColor="@color/triplan_black"
+            android:gravity="center"
+            android:background="@drawable/suggest_text_time_border_bottom"
+            android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
+            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
+            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextTimeTilde"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextTime"/>
+
+        <TextView
+            android:id="@+id/suggestTextTimeTilde"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/suggest_general_height"
+            android:text="@string/suggest_text_tilde"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:paddingTop="@dimen/suggest_text_general_padding_top"
+            app:layout_constraintStart_toEndOf="@id/suggestTextTimeFromForm"
+            app:layout_constraintEnd_toStartOf="@id/suggestTextTimeToForm"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextTime"/>
+
+        <TextView
+            android:id="@+id/suggestTextTimeToForm"
+            android:layout_width="@dimen/suggest_text_form_time_width"
+            android:layout_height="@dimen/suggest_general_height"
+            android:textSize="@dimen/suggest_text_form_time_text_size"
+            android:textColor="@color/triplan_black"
+            android:gravity="center"
+            android:background="@drawable/suggest_text_time_border_bottom"
+            android:layout_marginEnd="@dimen/suggest_text_form_time_margin_end"
+            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
+            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
+            app:layout_constraintStart_toEndOf="@id/suggestTextTimeTilde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestTextTime"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="@dimen/suggest_button_width"
+        android:layout_height="@dimen/suggest_general_height"
+        android:text="@string/suggest_button_propose"
+        android:textColor="@color/triplan_white"
+        android:textSize="@dimen/suggest_general_text_size"
+        android:background="@drawable/suggest_btn_propose"
+        android:stateListAnimator="@null"
+        android:elevation="@dimen/suggest_button_elevation"
+        android:layout_marginTop="@dimen/suggest_button_margin_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/suggestFrame"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
