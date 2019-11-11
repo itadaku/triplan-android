@@ -74,7 +74,7 @@
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sign_in_button_height"
-        android:background="@drawable/btn_triplan_blue_selector"
+        android:background="@drawable/selector_btn_triplan_blue"
         android:text="@string/sign_in_button_text"
         android:textSize="@dimen/sign_in_button_text_size"
         android:textColor="@color/triplan_white"

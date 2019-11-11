@@ -6,12 +6,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.top.TopFragment" >
     <TextView
+        android:id="@+id/topFragmentTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="top"
+        android:text="@string/top_fragment_title_text"
+        android:textSize="@dimen/top_fragment_title_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="@dimen/top_fragment_title_text_margin_start"
+        android:layout_marginTop="@dimen/top_fragment_title_text_margin_top"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topContentsListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/top_fragment_contents_list_recycler_view_margin_top"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topFragmentTitleText"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        tools:listitem="@layout/item_top_contents_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

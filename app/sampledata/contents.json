@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "title": "国内気軽にリゾートプラン",
+      "review": "4.7",
+      "people": "2人",
+      "location": "静岡",
+      "stay": "1泊2日",
+      "budget": "¥5,000 ~ ¥6,000"
+    },
+    {
+      "title": "温泉プラン",
+      "review": "4.5",
+      "people": "1人",
+      "location": "箱根",
+      "stay": "1泊2日",
+      "budget": "¥5,000 ~ 6,000"
+    }
+  ],
+  "content_group": [
+    { "title": "おすすめプラン" },
+    { "title": "最近のプラン" },
+    { "title": "過去のプラン" }
+  ]
+}

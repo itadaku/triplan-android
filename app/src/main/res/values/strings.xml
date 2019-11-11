@@ -44,4 +44,6 @@
     <string name="suggest_text_dollar">¥</string>
     <string name="suggest_text_tilde">~</string>
     <string name="suggest_button_propose">提案</string>
+  
+    <string name="top_fragment_title_text">Top</string>
 </resources>
