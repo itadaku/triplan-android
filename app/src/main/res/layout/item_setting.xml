@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/setting_item_height"
+    android:elevation="@dimen/setting_item_elevation"
+    android:background="@drawable/background_item_setting"
+    android:layout_marginStart="@dimen/setting_item_margin_horizon"
+    android:layout_marginEnd="@dimen/setting_item_margin_horizon"
+    android:layout_marginBottom="@dimen/setting_item_margin_bottom">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/settingCircle"
+        android:layout_width="@dimen/setting_item_circle_width"
+        android:layout_height="@dimen/setting_item_circle_height"
+        android:background="@drawable/background_item_setting_circle"
+        android:layout_marginStart="@dimen/setting_item_circle_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:id="@+id/settingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@sample/setting_lists.json/data/name"
+        android:textSize="@dimen/setting_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:paddingStart="@dimen/setting_item_text_padding_start"
+        app:layout_constraintStart_toEndOf="@id/settingCircle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

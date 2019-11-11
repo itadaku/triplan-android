@@ -46,4 +46,12 @@
     <string name="suggest_button_propose">提案</string>
   
     <string name="top_fragment_title_text">Top</string>
+
+    <string name="setting_fragment_title_text">Setting</string>
+    <string-array name="setting_item_array_text">
+        <item>ユーザ情報編集</item>
+        <item>ご意見・ご要望</item>
+        <item>不具合報告</item>
+        <item>利用規約</item>
+    </string-array>
 </resources>
