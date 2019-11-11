@@ -25,7 +25,7 @@
         android:id="@+id/settingText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        tools:text="@sample/setting_lists.json/data/name"
         android:textSize="@dimen/setting_item_text_text_size"
         android:textColor="@color/triplan_black"
         android:paddingStart="@dimen/setting_item_text_padding_start"
