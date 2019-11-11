@@ -16,6 +16,4 @@
     android:paddingBottom="@dimen/tag_item_padding_vertical"
     android:layout_marginStart="@dimen/tag_item_margin_horizontal"
     android:layout_marginEnd="@dimen/tag_item_margin_horizontal"
-    tools:text="@sample/tag.json/data/tag"
-    >
-</TextView>
+    tools:text="@sample/tag.json/data/tag" />
