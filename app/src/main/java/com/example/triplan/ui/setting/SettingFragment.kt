@@ -24,7 +24,7 @@ class SettingFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val settingLists = arrayListOf<String>("ユーザ情報編集", "ご意見・ご要望", "不具合報告", "利用規約")
+        val settingLists = resources.getStringArray(R.array.setting_item_array_text).toList()
         val settingRecyclerViewAdapter = SettingRecyclerViewAdapter(settingLists)
         settingRecyclerView.adapter = settingRecyclerViewAdapter
     }

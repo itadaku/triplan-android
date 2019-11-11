@@ -90,6 +90,7 @@
     <dimen name="setting_fragment_title_text_text_size">25sp</dimen>
     <dimen name="setting_fragment_title_text_margin_start">25dp</dimen>
     <dimen name="setting_fragment_title_text_margin_top">25dp</dimen>
+    <dimen name="setting_fragment_recycler_view_height">0dp</dimen>
     <dimen name="setting_fragment_recycler_view_margin_top">40dp</dimen>
     
     <!-- items of SettingFragment -->
@@ -102,4 +103,5 @@
     <dimen name="setting_item_circle_margin_start">8dp</dimen>
     <dimen name="setting_item_text_text_size">16sp</dimen>
     <dimen name="setting_item_text_padding_start">10dp</dimen>
+    <dimen name="setting_item_background_radius">15dp</dimen>
 </resources>

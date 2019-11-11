@@ -21,8 +21,6 @@ class SettingRecyclerViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        //val textView = inflater.inflate(R.layout.item_setting, parent, false) as ConstraintLayout
-        //return ViewHolder(textView)
         return ViewHolder.create(inflater, parent, R.layout.item_setting)
     }
 
