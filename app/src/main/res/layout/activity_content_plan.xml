@@ -9,132 +9,173 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
+        android:src="@drawable/sample"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/contentPlanBack"
+        android:layout_width="@dimen/content_plan_back_width"
+        android:layout_height="@dimen/content_plan_back_height"
+        android:src="@drawable/ic_back"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/content_plan_back_margin_start"
+        android:layout_marginTop="@dimen/content_plan_back_margin_top" />
+    <TextView
+        android:id="@+id/contentPlanTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/content_plan_title_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/triplan_white"
+        android:layout_marginStart="@dimen/content_plan_title_margin_start"
+        android:layout_marginBottom="@dimen/content_plan_title_margin_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/contentPlanMainImage" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentPlanInfoLayout"
         android:layout_width="match_parent"
-        android:layout_height="185dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginTop="20dp"
-        android:elevation="15dp"
+        android:layout_height="@dimen/content_plan_info_layout_height"
+        android:layout_marginStart="@dimen/content_plan_info_layout_margin_start"
+        android:layout_marginEnd="@dimen/content_plan_info_layout_margin_end"
+        android:layout_marginTop="@dimen/content_plan_info_layout_margin_top"
+        android:elevation="@dimen/content_plan_info_layout_elevation"
         app:layout_constraintTop_toBottomOf="@id/contentPlanMainImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/background_content_info_layout" >
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icTagImageView"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/content_plan_ic_size"
+            android:layout_height="@dimen/content_plan_ic_size"
             android:src="@drawable/ic_tag"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginStart="@dimen/content_plan_ic_margin_start"
+            android:layout_marginTop="@dimen/content_plan_ic_margin_top"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icManImageView"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/content_plan_ic_size"
+            android:layout_height="@dimen/content_plan_ic_size"
             android:src="@drawable/ic_man"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="@dimen/content_plan_ic_margin_start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/icTagImageView"
             app:layout_constraintBottom_toTopOf="@id/icCalenderImageView" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icCalenderImageView"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/content_plan_ic_size"
+            android:layout_height="@dimen/content_plan_ic_size"
             android:src="@drawable/ic_calender"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="@dimen/content_plan_ic_margin_start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icMoneyImageView"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/content_plan_ic_size"
+            android:layout_height="@dimen/content_plan_ic_size"
             android:src="@drawable/ic_money"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="@dimen/content_plan_ic_margin_start"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/icCalenderImageView"
             app:layout_constraintBottom_toTopOf="@id/icLocationImageView" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/icLocationImageView"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/content_plan_ic_size"
+            android:layout_height="@dimen/content_plan_ic_size"
             android:src="@drawable/ic_location"
-            android:layout_marginStart="18dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginStart="@dimen/content_plan_ic_margin_start"
+            android:layout_marginBottom="@dimen/content_plan_ic_margin_bottom"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contentPlanTagsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginStart="@dimen/content_plan_tags_recycler_view_margin_start"
+            app:layout_constraintStart_toEndOf="@id/icTagImageView"
+            app:layout_constraintTop_toTopOf="@id/icTagImageView"
+            app:layout_constraintBottom_toBottomOf="@id/icTagImageView"
+            tools:listitem="@layout/item_tag" />
+
         <TextView
+            android:id="@+id/contentPlanDetailPeopleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2人"
-            android:textSize="16dp"
+            android:textSize="@dimen/content_plan_detail_text_size"
             android:textColor="@color/triplan_white"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/content_plan_detail_text_margin_start"
             app:layout_constraintTop_toTopOf="@id/icManImageView"
             app:layout_constraintBottom_toBottomOf="@id/icManImageView"
             app:layout_constraintStart_toEndOf="@id/icManImageView" />
 
         <TextView
+            android:id="@+id/contentPlanDetailStayText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1泊2日"
-            android:textSize="16sp"
+            android:textSize="@dimen/content_plan_detail_text_size"
             android:textColor="@color/triplan_white"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/content_plan_detail_text_margin_start"
             app:layout_constraintTop_toTopOf="@id/icCalenderImageView"
             app:layout_constraintBottom_toBottomOf="@id/icCalenderImageView"
             app:layout_constraintStart_toEndOf="@+id/icCalenderImageView" />
 
         <TextView
+            android:id="@+id/contentPlanDetailMoneyText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¥15,000 ~ ¥18,000"
-            android:textSize="16sp"
+            android:textSize="@dimen/content_plan_detail_text_size"
             android:textColor="@color/triplan_white"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/content_plan_detail_text_margin_start"
             app:layout_constraintTop_toTopOf="@id/icMoneyImageView"
             app:layout_constraintBottom_toBottomOf="@id/icMoneyImageView"
             app:layout_constraintStart_toEndOf="@+id/icMoneyImageView" />
 
         <TextView
+            android:id="@+id/contentPlanDetailLocationText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="静岡県"
-            android:textSize="16sp"
+            android:textSize="@dimen/content_plan_detail_text_size"
             android:textColor="@color/triplan_white"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/content_plan_detail_text_margin_start"
             app:layout_constraintTop_toTopOf="@id/icLocationImageView"
             app:layout_constraintBottom_toBottomOf="@id/icLocationImageView"
             app:layout_constraintStart_toEndOf="@+id/icLocationImageView" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintStart_toEndOf="@id/icTagImageView"
-            app:layout_constraintTop_toTopOf="@id/icTagImageView"
-            app:layout_constraintBottom_toBottomOf="@id/icTagImageView"
-            tools:listitem="@layout/item_tag" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contentPlanScheduleRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/content_plan_schedule_recycler_view_height"
+        android:layout_marginTop="@dimen/content_plan_schedule_recycler_view_margin_top"
         app:layout_constraintTop_toBottomOf="@id/contentPlanInfoLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_content_plan_schedule" />
+
+    <Button
+        android:id="@+id/contentPlanSuggestButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/triplan_blue"
+        android:text="@string/content_plan_suggest_button_text"
+        android:textSize="@dimen/content_plan_suggest_button_text_size"
+        android:textColor="@color/triplan_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

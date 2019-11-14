@@ -54,4 +54,6 @@
         <item>不具合報告</item>
         <item>利用規約</item>
     </string-array>
+
+    <string name="content_plan_suggest_button_text">このプランにする</string>
 </resources>
