@@ -1,0 +1,10 @@
+{
+  "station": [
+    {"name": "JR東京駅"},
+    {"name": "JR熱海駅"}
+  ],
+  "detail": [
+    {"name": "X番線 XXX線"},
+    {"name": "Y番線 YYY線"}
+  ]
+}
