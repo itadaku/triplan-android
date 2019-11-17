@@ -32,5 +32,11 @@
         <activity
             android:name=".ui.sign_in.SignInActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.content_plan_detail.ContentPlanDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.content_plan_traffic.ContentPlanTrafficActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

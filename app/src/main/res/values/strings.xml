@@ -56,4 +56,26 @@
     </string-array>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
+
+    <string name="content_plan_detail_name_text">○○リゾートホテル</string>
+    <string name="content_plan_detail_description_text">aaaaaaaa</string>
+    <string name="content_plan_detail_link_text">リンク</string>
+    <string name="content_plan_detail_text_web_text">http://</string>
+    <string name="content_plan_detail_text_inst_text">instagram</string>
+    <string name="content_plan_detail_map_text">マップ</string>
+    <string name="content_plan_detail_review_text">レビュー</string>
+
+    <string-array name="review_comments">
+        <item>文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章</item>
+        <item>光るものすべて金ならず</item>
+    </string-array>
+
+    <string-array name="content_plan_traffic_station_array_text">
+        <item>JR東京駅</item>
+        <item>JR熱海駅</item>
+    </string-array>
+    <string-array name="content_plan_traffic_detail_array_text">
+        <item>X番線 XXX線</item>
+        <item>Y番線 YYY線</item>
+    </string-array>
 </resources>
