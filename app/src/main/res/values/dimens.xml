@@ -179,6 +179,48 @@
     <dimen name="content_plan_detail_text_web_text_size">16sp</dimen>
     <dimen name="content_plan_detail_text_web_margin_top">15dp</dimen>
     <dimen name="content_plan_detail_text_web_padding_start">5dp</dimen>
+    <dimen name="content_plan_detail_google_map_height">191dp</dimen>
+    <dimen name="content_plan_detail_google_map_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_image_map_margin_start">27dp</dimen>
+    <dimen name="content_plan_detail_image_map_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_padding_start">5dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_text_size">16sp</dimen>
+    <dimen name="content_plan_detail_review_value_width">175dp</dimen>
+    <dimen name="content_plan_detail_review_value_height">162dp</dimen>
+    <dimen name="content_plan_detail_review_value_margin_start">12dp</dimen>
+    <dimen name="content_plan_detail_review_value_margin_top">17dp</dimen>
+    <dimen name="content_plan_detail_review_value_elevation">5dp</dimen>
+    <dimen name="content_plan_detail_review_value_num_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_review_value_num_text_size">80sp</dimen>
+    <dimen name="content_plan_detail_review_value_star_width">30dp</dimen>
+    <dimen name="content_plan_detail_review_value_star_height">30dp</dimen>
+    <dimen name="content_plan_detail_review_value_star_margin_start">10dp</dimen>
+    <dimen name="content_plan_detail_review_value_star_margin_top">106dp</dimen>
+    <dimen name="content_plan_detail_review_recycler_view_margin_top">25dp</dimen>
+
+    <!-- item review of ContentPlanDetailActivity -->
+    <dimen name="review_elevation">5dp</dimen>
+    <dimen name="review_margin_horizontal">13dp</dimen>
+    <dimen name="review_margin_bottom">15dp</dimen>
+    <dimen name="review_padding_bottom">14dp</dimen>
+    <dimen name="review_icon_layout_width">30dp</dimen>
+    <dimen name="review_icon_layout_height">30dp</dimen>
+    <dimen name="review_icon_margin_start">12dp</dimen>
+    <dimen name="review_icon_margin_top">8dp</dimen>
+    <dimen name="review_comment_text_size">18sp</dimen>
+    <dimen name="review_comment_margin_start">17dp</dimen>
+    <dimen name="review_comment_margin_end">9dp</dimen>
+    <dimen name="review_comment_margin_top">8dp</dimen>
+
+    <!-- item review graph of ContentPlanDetailActivity -->
+    <dimen name="review_graph_margin_horizontal">13dp</dimen>
+    <dimen name="review_graph_number_width">26dp</dimen>
+    <dimen name="review_graph_number_height">32dp</dimen>
+    <dimen name="review_graph_number_text_size">24sp</dimen>
+    <dimen name="review_graph_bar_width">50dp</dimen>
+    <dimen name="review_graph_bar_layout_height">14dp</dimen>
+    <dimen name="review_graph_bar_value_text_size">18sp</dimen>
 
     <!-- ContentPlanTrafficActivity -->
     <dimen name="content_plan_traffic_back_width">13dp</dimen>

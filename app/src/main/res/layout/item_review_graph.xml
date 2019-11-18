@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/review_graph_margin_horizontal">
+
+    <TextView
+        android:id="@+id/reviewGraphNumber"
+        android:layout_width="@dimen/review_graph_number_width"
+        android:layout_height="@dimen/review_graph_number_height"
+        tools:text="@sample/review_value.json/data/number"
+        android:textSize="@dimen/review_graph_number_text_size"
+        android:textColor="@color/triplan_black"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/reviewGraphBar"
+        android:layout_width="@dimen/review_graph_bar_width"
+        tools:layout_width="@sample/review_value.json/data/width"
+        android:layout_height="@dimen/review_graph_bar_layout_height"
+        android:background="@color/triplan_light_blue"
+        app:layout_constraintStart_toEndOf="@id/reviewGraphNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <TextView
+        android:id="@+id/reviewGraphBarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@sample/review_value.json/data/value"
+        android:textSize="@dimen/review_graph_bar_value_text_size"
+        android:textColor="@color/triplan_black"
+        app:layout_constraintStart_toEndOf="@id/reviewGraphBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
