@@ -61,16 +61,16 @@
     <string name="content_plan_detail_name_text">○○リゾートホテル</string>
     <string name="content_plan_detail_description_text">aaaaaaaa</string>
     <string name="content_plan_detail_link_text">リンク</string>
-    <string name="content_plan_detail_text_web_text">http://</string>
-    <string name="content_plan_detail_text_inst_text">instagram</string>
+    <string name="content_plan_detail_text_web_text"><a href='http://example.com'>http://example.com</a></string>
+    <string name="content_plan_detail_text_inst_text"><a href='https://www.instagram.com/?hl=ja'>instagram</a></string>
     <string name="content_plan_detail_map_text">マップ</string>
     <string name="content_plan_detail_review_text">レビュー</string>
     <string name="content_plan_detail_map_address">静岡県○○市</string>
     <string name="content_plan_detail_review_value_num">5.0</string>
 
     <string-array name="review_comments">
-        <item>文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章</item>
-        <item>光るものすべて金ならず</item>
+        <item>あいうえお</item>
+        <item>かきくけこ</item>
     </string-array>
     <string-array name="review_graph_numbers">
         <item>5</item>
@@ -87,11 +87,11 @@
         <item>10</item>
     </string-array>
     <string-array name="review_graph_bar_widths">
-        <item>50dp</item>
-        <item>40dp</item>
-        <item>30dp</item>
-        <item>20dp</item>
-        <item>10dp</item>
+        <item>50</item>
+        <item>40</item>
+        <item>30</item>
+        <item>20</item>
+        <item>10</item>
     </string-array>
 
     <!-- ContentPlanTrafficActivity -->

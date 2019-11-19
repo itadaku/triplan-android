@@ -15,7 +15,7 @@
         android:id="@+id/reviewIcon"
         android:layout_width="@dimen/review_icon_layout_width"
         android:layout_height="@dimen/review_icon_layout_height"
-        android:background="@color/triplan_black"
+        android:background="@drawable/ic_circle"
         android:layout_marginStart="@dimen/review_icon_margin_start"
         android:layout_marginTop="@dimen/review_icon_margin_top"
         app:layout_constraintStart_toStartOf="parent"

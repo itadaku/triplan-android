@@ -83,7 +83,7 @@
                 android:layout_height="@dimen/content_plan_detail_image_web_height"
                 android:layout_marginStart="@dimen/content_plan_detail_image_web_margin_start"
                 android:layout_marginTop="@dimen/content_plan_detail_image_web_margin_top"
-                android:background="@color/triplan_black"
+                android:background="@drawable/ic_link"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/contentPlanDetailTextLink" />
 
@@ -106,7 +106,7 @@
                 android:layout_height="@dimen/content_plan_detail_image_web_height"
                 android:layout_marginStart="@dimen/content_plan_detail_image_web_margin_start"
                 android:layout_marginTop="@dimen/content_plan_detail_image_web_margin_top"
-                android:background="@color/triplan_black"
+                android:background="@drawable/ic_insta"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/contentPlanDetailImageWeb" />
 
@@ -115,8 +115,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/content_plan_detail_text_web_margin_top"
-                android:autoLink="all"
-                android:linksClickable="true"
                 android:paddingStart="@dimen/content_plan_detail_text_web_padding_start"
                 android:text="@string/content_plan_detail_text_inst_text"
                 android:textColor="@color/triplan_blue"

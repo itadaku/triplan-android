@@ -2,6 +2,7 @@ package com.example.triplan.ui.content_plan_detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
@@ -10,8 +11,8 @@ import kotlinx.android.synthetic.main.item_review_graph.view.*
 
 class ReviewGraphRecyclerViewAdapter(
     private val numbers: List<String>,
-    private val bar_values: List<String>,
-    private val bar_widths: List<Float>
+    private val barValues: List<String>,
+    private val barWidths: List<Int>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         return numbers.size
@@ -24,7 +25,9 @@ class ReviewGraphRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder.itemView.reviewGraphNumber.text = numbers[position]
-        holder.itemView.reviewGraphBar.x = bar_widths[position]
-        holder.itemView.reviewGraphBarValue.text = bar_values[position]
+        val reviewGraphBarLayoutParams = holder.itemView.reviewGraphBar.layoutParams
+        reviewGraphBarLayoutParams.width = barWidths[position]
+        holder.itemView.reviewGraphBar.layoutParams = reviewGraphBarLayoutParams
+        holder.itemView.reviewGraphBarValue.text = barValues[position]
     }
 }
