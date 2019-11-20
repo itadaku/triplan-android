@@ -12,6 +12,10 @@ buildscript {
         recyclerViewVersion = '28.0.0'
         googleServiceVersion = '4.3.2'
         firebaseAnalyticsVersion = '17.2.0'
+        androidLifecycleVersion = '2.1.0'
+        retrofitVersion = '2.5.0'
+        moshiVersion = '1.9.1'
+        okhttpVersion = '3.13.1'
     }
     repositories {
         google()
