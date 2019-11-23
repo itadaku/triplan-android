@@ -10,8 +10,8 @@
         android:layout_width="@dimen/content_plan_traffic_back_width"
         android:layout_height="@dimen/content_plan_traffic_back_height"
         android:background="@drawable/ic_back_black"
-        android:layout_marginStart="@dimen/content_plan_traffic_back_margin_start"
-        android:layout_marginTop="@dimen/content_plan_traffic_back_margin_top"
+        android:layout_marginStart="@dimen/content_plan_back_margin_start"
+        android:layout_marginTop="@dimen/content_plan_back_margin_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

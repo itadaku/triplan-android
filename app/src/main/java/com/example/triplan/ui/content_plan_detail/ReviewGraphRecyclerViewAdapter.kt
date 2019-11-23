@@ -10,12 +10,10 @@ import kotlinx.android.synthetic.main.item_review.view.*
 import kotlinx.android.synthetic.main.item_review_graph.view.*
 
 class ReviewGraphRecyclerViewAdapter(
-    private val numbers: List<String>,
-    private val barValues: List<String>,
-    private val barWidths: List<Int>
+    private val reviewGraphs: List<ReviewGraph>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
-        return numbers.size
+        return reviewGraphs.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -24,10 +22,10 @@ class ReviewGraphRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.reviewGraphNumber.text = numbers[position]
+        holder.itemView.reviewGraphNumber.text = reviewGraphs[position].number.toString()
         val reviewGraphBarLayoutParams = holder.itemView.reviewGraphBar.layoutParams
-        reviewGraphBarLayoutParams.width = barWidths[position]
+        reviewGraphBarLayoutParams.width = reviewGraphs[position].value * 2
         holder.itemView.reviewGraphBar.layoutParams = reviewGraphBarLayoutParams
-        holder.itemView.reviewGraphBarValue.text = barValues[position]
+        holder.itemView.reviewGraphBarValue.text = reviewGraphs[position].value.toString()
     }
 }

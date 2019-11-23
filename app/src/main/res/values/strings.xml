@@ -58,49 +58,10 @@
     <string name="content_plan_suggest_button_text">このプランにする</string>
 
     <!-- ContentPlanDetailActivity -->
-    <string name="content_plan_detail_name_text">○○リゾートホテル</string>
-    <string name="content_plan_detail_description_text">aaaaaaaa</string>
     <string name="content_plan_detail_link_text">リンク</string>
     <string name="content_plan_detail_text_web_text"><a href='http://example.com'>http://example.com</a></string>
     <string name="content_plan_detail_text_inst_text"><a href='https://www.instagram.com/?hl=ja'>instagram</a></string>
     <string name="content_plan_detail_map_text">マップ</string>
     <string name="content_plan_detail_review_text">レビュー</string>
-    <string name="content_plan_detail_map_address">静岡県○○市</string>
-    <string name="content_plan_detail_review_value_num">5.0</string>
 
-    <string-array name="review_comments">
-        <item>あいうえお</item>
-        <item>かきくけこ</item>
-    </string-array>
-    <string-array name="review_graph_numbers">
-        <item>5</item>
-        <item>4</item>
-        <item>3</item>
-        <item>2</item>
-        <item>1</item>
-    </string-array>
-    <string-array name="review_graph_bar_values">
-        <item>50</item>
-        <item>40</item>
-        <item>30</item>
-        <item>20</item>
-        <item>10</item>
-    </string-array>
-    <string-array name="review_graph_bar_widths">
-        <item>50</item>
-        <item>40</item>
-        <item>30</item>
-        <item>20</item>
-        <item>10</item>
-    </string-array>
-
-    <!-- ContentPlanTrafficActivity -->
-    <string-array name="content_plan_traffic_station_array_text">
-        <item>JR東京駅</item>
-        <item>JR熱海駅</item>
-    </string-array>
-    <string-array name="content_plan_traffic_detail_array_text">
-        <item>X番線 XXX線</item>
-        <item>Y番線 YYY線</item>
-    </string-array>
 </resources>

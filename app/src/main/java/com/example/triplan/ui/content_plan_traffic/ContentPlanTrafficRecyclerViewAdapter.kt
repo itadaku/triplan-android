@@ -9,11 +9,10 @@ import kotlinx.android.synthetic.main.item_content_plan_traffic.view.*
 import kotlinx.android.synthetic.main.item_setting.view.*
 
 class ContentPlanTrafficRecyclerViewAdapter(
-    private val contentPlanTrafficDetailLists: List<String>,
-    private val contentPlanTrafficStationLists: List<String>
+    private val traffics: List<Traffic>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
-        return contentPlanTrafficDetailLists.size
+        return traffics.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -22,7 +21,7 @@ class ContentPlanTrafficRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.contentPlanTrafficTextDetail.text = contentPlanTrafficDetailLists[position]
-        holder.itemView.contentPlanTrafficTextStation.text = contentPlanTrafficStationLists[position]
+        holder.itemView.contentPlanTrafficTextDetail.text = traffics[position].detail
+        holder.itemView.contentPlanTrafficTextStation.text = traffics[position].station
     }
 }

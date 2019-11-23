@@ -8,7 +8,7 @@ import com.example.triplan.lib.ViewHolder
 import kotlinx.android.synthetic.main.item_review.view.*
 
 class ReviewListRecyclerViewAdapter(
-    private val reviews: List<String>
+    private val reviews: List<Review>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         return reviews.size
@@ -20,6 +20,6 @@ class ReviewListRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.reviewComment.text = reviews[position]
+        holder.itemView.reviewComment.text = reviews[position].comment
     }
 }
