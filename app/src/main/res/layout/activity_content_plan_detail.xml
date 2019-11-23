@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+        android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -37,19 +37,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|center_horizontal"
                 android:layout_marginTop="@dimen/content_plan_detail_info_margin_top"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="@dimen/content_plan_detail_info_margin_bottom"
                 android:background="@drawable/content_plan_detail_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/contentPlanDetailTextName"
+                    android:id="@+id/contentPlanDetailTextTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/content_plan_detail_name_margin_top"
-                    android:paddingStart="@dimen/content_plan_detail_name_padding_start"
+                    android:layout_marginTop="@dimen/content_plan_detail_title_margin_top"
+                    android:paddingStart="@dimen/content_plan_detail_title_padding_start"
+                    tools:text="@sample/content_plan_detail.json/title"
                     android:textColor="@color/triplan_black"
-                    android:textSize="@dimen/content_plan_detail_name_text_size"
+                    android:textSize="@dimen/content_plan_detail_title_text_size"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,10 +61,11 @@
                     android:layout_marginStart="@dimen/content_plan_detail_description_margin_start"
                     android:layout_marginTop="@dimen/content_plan_detail_description_margin_top"
                     android:paddingStart="@dimen/content_plan_detail_description_padding_start"
+                    tools:text="@sample/content_plan_detail.json/detail"
                     android:textColor="@color/triplan_black"
                     android:textSize="@dimen/content_plan_detail_description_text_size"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/contentPlanDetailTextName" />
+                    app:layout_constraintTop_toBottomOf="@id/contentPlanDetailTextTitle" />
 
                 <TextView
                     android:id="@+id/contentPlanDetailTextLink"
@@ -169,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_plan_detail_text_map_address_margin_top"
                     android:paddingStart="@dimen/content_plan_detail_text_map_address_padding_start"
+                    tools:text="@sample/content_plan_detail.json/map_address"
                     android:textColor="@color/triplan_blue"
                     android:textSize="@dimen/content_plan_detail_text_map_address_text_size"
                     app:layout_constraintStart_toEndOf="@id/contentPlanDetailImageMap"
@@ -205,19 +208,21 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/content_plan_detail_review_value_num_margin_top"
                         android:gravity="center"
+                        tools:text="@sample/content_plan_detail.json/review_value"
                         android:textColor="@color/triplan_white"
                         android:textSize="@dimen/content_plan_detail_review_value_num_text_size"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/contentPlanDetailReviewValueStar"
-                        android:layout_width="@dimen/content_plan_detail_review_value_star_width"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/contentPlanDetailReviewStarRecyclerView"
+                        android:layout_width="match_parent"
                         android:layout_height="@dimen/content_plan_detail_review_value_star_height"
                         android:layout_marginStart="@dimen/content_plan_detail_review_value_star_margin_start"
                         android:layout_marginTop="@dimen/content_plan_detail_review_value_star_margin_top"
-                        android:background="@drawable/ic_star"
+                        android:orientation="horizontal"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/contentPlanDetailReviewValueNum" />
+                        app:layout_constraintTop_toTopOf="@id/contentPlanDetailReviewValueNum"
+                        tools:listitem="@layout/item_review_star"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

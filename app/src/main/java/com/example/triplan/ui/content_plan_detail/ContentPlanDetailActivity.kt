@@ -2,13 +2,17 @@ package com.example.triplan.ui.content_plan_detail
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
 import kotlinx.android.synthetic.main.activity_content_plan_detail.*
+import java.lang.Exception
 import java.util.stream.Stream
 
 data class Review(
@@ -25,8 +29,15 @@ class ContentPlanDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_plan_detail)
 
-        contentPlanDetailTextInst.text = Html.fromHtml(resources.getString(R.string.content_plan_detail_text_inst_text))
-        contentPlanDetailTextInst.movementMethod = LinkMovementMethod.getInstance()
+        val packageNameInsta = "com.instagram.android"
+        val classNameInsta = "com.instagram.android.activity.MainTabActivity"
+        contentPlanDetailTextInst.setOnClickListener {
+            intent.setClassName(packageNameInsta, classNameInsta)
+            try {
+                startActivity(intent)
+            } catch (e: Exception) {
+            }
+        }
 
         val reviews = listOf<Review>()
         val reviewListRecyclerViewAdapter = ReviewListRecyclerViewAdapter(reviews)
@@ -35,6 +46,10 @@ class ContentPlanDetailActivity : AppCompatActivity() {
         val reviewGraphs = listOf<ReviewGraph>()
         val reviewGraphRecyclerViewAdapter = ReviewGraphRecyclerViewAdapter(reviewGraphs)
         contentPlanDetailReviewGraphRecyclerView.adapter = reviewGraphRecyclerViewAdapter
+
+        val reviewStarNum = 3
+        val reviewStarRecyclerViewAdapter = ReviewStarRecyclerViewAdapter(reviewStarNum)
+        contentPlanDetailReviewStarRecyclerView.adapter = reviewStarRecyclerViewAdapter
     }
 
     companion object {
