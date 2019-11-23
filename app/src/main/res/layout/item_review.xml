@@ -11,7 +11,7 @@
     android:layout_marginBottom="@dimen/review_margin_bottom"
     android:paddingBottom="@dimen/review_padding_bottom">
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/reviewIcon"
         android:layout_width="@dimen/review_icon_layout_width"
         android:layout_height="@dimen/review_icon_layout_height"

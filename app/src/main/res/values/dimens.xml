@@ -194,8 +194,6 @@
     <dimen name="content_plan_detail_review_value_elevation">5dp</dimen>
     <dimen name="content_plan_detail_review_value_num_margin_top">14dp</dimen>
     <dimen name="content_plan_detail_review_value_num_text_size">80sp</dimen>
-    <dimen name="content_plan_detail_review_value_star_width">30dp</dimen>
-    <dimen name="content_plan_detail_review_value_star_height">30dp</dimen>
     <dimen name="content_plan_detail_review_value_star_margin_start">10dp</dimen>
     <dimen name="content_plan_detail_review_value_star_margin_top">106dp</dimen>
     <dimen name="content_plan_detail_review_recycler_view_margin_top">25dp</dimen>
@@ -222,6 +220,10 @@
     <dimen name="review_graph_bar_width">50dp</dimen>
     <dimen name="review_graph_bar_layout_height">14dp</dimen>
     <dimen name="review_graph_bar_value_text_size">18sp</dimen>
+
+    <!-- item review star of ContentPlanDetailActivity -->
+    <dimen name="review_value_star_width">30dp</dimen>
+    <dimen name="review_value_star_height">30dp</dimen>
 
     <!-- ContentPlanTrafficActivity -->
     <dimen name="content_plan_traffic_back_width">13dp</dimen>
