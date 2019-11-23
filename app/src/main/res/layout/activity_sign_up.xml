@@ -166,7 +166,7 @@
         android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
         android:layout_marginStart="@dimen/sign_up_text_form_margin_start"
         android:layout_marginEnd="@dimen/sign_up_text_form_margin_end"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/signUpTextNearestStationLine"
         app:layout_constraintTop_toBottomOf="@id/signUpTextNearestStation" />
 
     <TextView
@@ -176,9 +176,10 @@
         android:text="@string/sign_up_text_nearest_station_line"
         android:textSize="@dimen/sign_up_text_text_size"
         android:textColor="@color/triplan_black"
-        app:layout_constraintStart_toEndOf="@id/signUpSpinnerNearestStationLine"
-        app:layout_constraintTop_toTopOf="@id/signUpSpinnerNearestStationLine"
-        app:layout_constraintBottom_toBottomOf="@id/signUpSpinnerNearestStationLine" />
+        android:layout_marginStart="@dimen/sign_up_text_margin_start"
+        android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signUpTextNearestStation" />
 
     <Spinner
         android:id="@+id/signUpSpinnerNearestStationStation"
@@ -187,7 +188,7 @@
         android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
         android:layout_marginStart="@dimen/sign_up_text_form_margin_start"
         android:layout_marginEnd="@dimen/sign_up_text_form_margin_end"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/signUpTextNearestStation"
         app:layout_constraintTop_toBottomOf="@id/signUpSpinnerNearestStationLine" />
 
     <TextView
@@ -197,9 +198,10 @@
         android:text="@string/sign_up_text_nearest_station_station"
         android:textSize="@dimen/sign_up_text_text_size"
         android:textColor="@color/triplan_black"
-        app:layout_constraintStart_toEndOf="@id/signUpSpinnerNearestStationStation"
-        app:layout_constraintTop_toTopOf="@id/signUpSpinnerNearestStationStation"
-        app:layout_constraintBottom_toBottomOf="@id/signUpSpinnerNearestStationStation" />
+        android:layout_marginStart="@dimen/sign_up_text_margin_start"
+        android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signUpTextNearestStationLine" />
 
     <Button
         android:id="@+id/signUpButton"

@@ -1,6 +1,6 @@
 package com.example.triplan.api.service
 
-import com.example.triplan.api.model.TestJson
+import com.example.triplan.api.model.Json.TestJson
 import retrofit2.Call
 import retrofit2.http.GET
 
