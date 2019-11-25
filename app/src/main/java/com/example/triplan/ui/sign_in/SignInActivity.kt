@@ -16,7 +16,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         signInButton.setOnClickListener {
-            ContentPlanDetailActivity.start(this)
+            
         }
     }
 

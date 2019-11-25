@@ -1,5 +1,6 @@
 package com.example.triplan.ui.content_plan_traffic
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -18,6 +19,10 @@ class ContentPlanTrafficActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_plan_traffic)
 
+        contentPlanTrafficBack.setOnClickListener {
+            setResult(Activity.RESULT_OK)
+            finish()
+        }
         val traffics = listOf<Traffic>()
         val contentPlanTrafficRecyclerViewAdapter = ContentPlanTrafficRecyclerViewAdapter(traffics)
         contentPlanTrafficRecyclerView.adapter = contentPlanTrafficRecyclerViewAdapter
