@@ -47,7 +47,8 @@ class ContentPlanDetailActivity : AppCompatActivity() {
         val reviewGraphRecyclerViewAdapter = ReviewGraphRecyclerViewAdapter(reviewGraphs)
         contentPlanDetailReviewGraphRecyclerView.adapter = reviewGraphRecyclerViewAdapter
 
-        val reviewStarNum = 3
+        val reviewStarNum = 3.0f
+        contentPlanDetailReviewValueNum.text = reviewStarNum.toString()
         val reviewStarRecyclerViewAdapter = ReviewStarRecyclerViewAdapter(reviewStarNum)
         contentPlanDetailReviewStarRecyclerView.adapter = reviewStarRecyclerViewAdapter
     }

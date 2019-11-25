@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import kotlinx.android.synthetic.main.activity_content_plan_detail.view.*
 
 class ReviewStarRecyclerViewAdapter(
-    private val starNum : Int
+    private val starNum : Float
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
-        return starNum
+        return starNum.toInt()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

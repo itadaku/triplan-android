@@ -13,8 +13,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:translationZ="-2dp"
-            android:layout_marginBottom="-20dp"
+            android:translationZ="@dimen/content_plan_detail_appbar_translationz"
             android:fitsSystemWindows="true">
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
@@ -33,7 +32,7 @@
                     />
                 <androidx.appcompat.widget.Toolbar
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="@dimen/content_plan_detail_toolbar_height"
                     app:layout_collapseMode="pin"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -43,25 +42,23 @@
             android:layout_width="@dimen/content_plan_back_width"
             android:layout_height="@dimen/content_plan_back_height"
             android:background="@drawable/ic_back"
-            android:translationZ="2dp"
             android:layout_marginStart="@dimen/content_plan_back_margin_start"
             android:layout_marginTop="@dimen/content_plan_back_margin_top"
             app:layout_anchor="@id/app_bar"
             app:layout_anchorGravity="top|start"
             />
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:translationZ="2dp"
-        android:layout_marginTop="-20dp"
-        android:layout_marginBottom="@dimen/content_plan_detail_info_margin_bottom"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:layout_marginBottom="@dimen/content_plan_detail_info_margin_bottom"
+            android:translationZ="2dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contentPlanDetailInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
                 android:layout_gravity="top|center_horizontal"
                 android:background="@drawable/content_plan_detail_background">
 
@@ -270,6 +267,6 @@
                     app:layout_constraintTop_toBottomOf="@id/contentPlanDetailReviewValue"
                     tools:listitem="@layout/item_review" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+        </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
