@@ -1,5 +1,6 @@
 package com.example.triplan.ui.content_plan_detail
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageInfo
@@ -37,6 +38,10 @@ class ContentPlanDetailActivity : AppCompatActivity() {
                 startActivity(intent)
             } catch (e: Exception) {
             }
+        }
+        contentPlanDetailBack.setOnClickListener {
+            setResult(Activity.RESULT_OK)
+            finish()
         }
 
         val reviews = listOf<Review>()

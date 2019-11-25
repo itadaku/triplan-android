@@ -50,15 +50,15 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-20dp"
-            android:layout_marginBottom="@dimen/content_plan_detail_info_margin_bottom"
-            android:translationZ="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/content_plan_detail_nested_scroll_view_margin_top"
+            android:layout_marginBottom="@dimen/content_plan_detail_nested_scroll_view_margin_bottom"
+            android:translationZ="@dimen/content_plan_detail_nested_scroll_view_translationz"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/contentPlanDetailInfo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="top|center_horizontal"
                 android:background="@drawable/content_plan_detail_background">
 
