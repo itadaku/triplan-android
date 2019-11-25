@@ -5,15 +5,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
+import com.example.triplan.data.UserStore
 import com.example.triplan.ui.sign_in.SignInActivity
 import com.example.triplan.ui.sign_up.SignUpActivity
 import kotlinx.android.synthetic.main.activity_welcome.*
 
 class WelcomeActivity : AppCompatActivity() {
+    val userStore = UserStore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
-
         createAccountButton.setOnClickListener {
             SignUpActivity.start(this)
         }

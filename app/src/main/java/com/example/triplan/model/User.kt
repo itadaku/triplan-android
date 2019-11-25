@@ -7,5 +7,5 @@ data class User(
     val age: Int,
     val gender: Gender,
     val nearestStation: String,
-    val token: String
+    var token: String
 )

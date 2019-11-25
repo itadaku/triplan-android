@@ -56,4 +56,9 @@
     </string-array>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
+
+    <!--  network  -->
+    <string name="network_client_error_message">クライアントエラー</string>
+    <string name="network_server_error_message">サーバーエラー</string>
+    <string name="network_failure_error">不明なエラー</string>
 </resources>

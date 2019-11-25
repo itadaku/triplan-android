@@ -141,7 +141,6 @@
         android:id="@+id/signUpSpinnerGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/sign_up_text_gender_form_array_text"
         android:layout_marginStart="@dimen/sign_up_sipnner_gender_margin_start"
         app:layout_constraintStart_toEndOf="@+id/signUpTextGender"
         app:layout_constraintTop_toTopOf="@id/signUpTextGender"
