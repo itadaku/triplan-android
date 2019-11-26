@@ -17,8 +17,9 @@ object UserStore {
         }
     }
 
-    fun getToken(context: Context) {
+    fun setToken(context: Context) {
         val sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-        token.postValue(sharedPreferences.getString(DataKey.TOKEN.key, "") ?: "")
+        val tokenData = sharedPreferences.getString(DataKey.TOKEN.key, "") ?: ""
+        token.postValue(tokenData)
     }
  }

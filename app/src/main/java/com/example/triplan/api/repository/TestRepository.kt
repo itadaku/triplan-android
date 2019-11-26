@@ -8,7 +8,6 @@ import com.example.triplan.api.service.TestService
 import com.example.triplan.lib.JsonMapper
 import com.example.triplan.lib.responseType
 import com.example.triplan.model.Test
-import com.example.triplan.model.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

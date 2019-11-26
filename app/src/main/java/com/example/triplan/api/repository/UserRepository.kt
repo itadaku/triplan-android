@@ -1,6 +1,6 @@
 package com.example.triplan.api.repository
 
-import android.util.Log
+import android.util. Log
 import com.example.triplan.api.ApiClient
 import com.example.triplan.api.ApiResponse
 import com.example.triplan.api.model.Body.SignInBody
@@ -10,7 +10,6 @@ import com.example.triplan.api.service.UserService
 import com.example.triplan.lib.JsonMapper
 import com.example.triplan.lib.responseType
 import com.example.triplan.model.User
-import com.google.android.gms.common.api.Api
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +38,7 @@ class UserRepository {
                         }
 
                         else -> {
-                            Log.d("Error Code", response.code().toString())
+                            Log.e("Error Code", response.code().toString())
                             failure.invoke(ApiResponse.Failure(response.responseType()))
                         }
                     }

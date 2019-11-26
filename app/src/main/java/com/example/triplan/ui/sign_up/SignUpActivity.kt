@@ -3,19 +3,15 @@ package com.example.triplan.ui.sign_up
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
-import com.example.triplan.api.ApiResponse
 import com.example.triplan.api.model.Body.SignUpBody
 import com.example.triplan.data.UserStore
 import com.example.triplan.lib.RegexPattern
 import com.example.triplan.model.Gender
-import com.example.triplan.model.User
 import com.example.triplan.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -48,8 +44,8 @@ class SignUpActivity : AppCompatActivity() {
         nearestStationStationSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         signUpSpinnerNearestStationStation.adapter = nearestStationStationSpinnerAdapter
 
-        signUpButton.setOnClickListener {
-            it.isEnabled = false
+        signUpButton.setOnClickListener { view ->
+            view.isEnabled = false
             val name = signUpTextNameForm.text.toString().trim()
             val email = signUpTextEmailForm.text.toString().trim()
             val password = signUpTextPasswordForm.text.toString().trim()
@@ -62,39 +58,30 @@ class SignUpActivity : AppCompatActivity() {
 
             if (email.isEmpty() || Regex(RegexPattern.EMAIL).containsMatchIn(email).not()) {
                 Toast.makeText(this, "メールアドレスを正しく入力してください", Toast.LENGTH_SHORT).show()
-                it.isEnabled = true
+                view.isEnabled = true
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
                 Toast.makeText(this, "パスワードを入力してください", Toast.LENGTH_SHORT).show()
-                it.isEnabled = true
+                view.isEnabled = true
                 return@setOnClickListener
             }
 
             if (age.isEmpty()) {
                 Toast.makeText(this, "年齢を入力してください", Toast.LENGTH_SHORT).show()
-                it.isEnabled = true
+                view.isEnabled = true
                 return@setOnClickListener
             }
 
             val signUpBody = SignUpBody(name, email, password, 0, age.toInt(), gender.value)
 
-            val response = viewModel.sendSignUpData(signUpBody)
-            when (response) {
-                is ApiResponse.Failure -> {
-                    Log.d("error", response.responseType.toString())
-                    Toast.makeText(this, response.errorMessage(this), Toast.LENGTH_SHORT).show()
-                    it.isEnabled = true
-                }
-
-                is ApiResponse.Success<*> -> {
-                    if (response.data is User) {
-//                        userStore.user.postValue(response.data)
-                        MainActivity.start(this)
-                    }
-                }
-            }
+            viewModel.sendSignUpData(signUpBody, {
+                MainActivity.start(this)
+            }, {response ->
+                Toast.makeText(this, response.errorMessage(this), Toast.LENGTH_SHORT).show()
+                view.isEnabled = true
+            })
         }
     }
 
