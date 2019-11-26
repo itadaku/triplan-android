@@ -4,20 +4,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.triplan.api.ApiResponse
 import com.example.triplan.api.repository.TestRepository
+import com.example.triplan.data.UserStore
 import com.example.triplan.model.Test
 
 class MainViewModel: ViewModel() {
     private val testRepository: TestRepository = TestRepository()
+    val userStore = UserStore
     val test = MutableLiveData<Test>()
 
-    fun getTest(): ApiResponse {
-        var response: ApiResponse = ApiResponse.Failure(ApiResponse.ResponseType.Failure)
+    fun getTest(
+        success: ((ApiResponse.Success<Test>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ) {
         testRepository.getTest({
-            test.postValue(it.data)
-            response = it
+            success.invoke(it)
         }, {
-            response = it
+            failure.invoke(it)
         })
-        return response
     }
 }
