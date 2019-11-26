@@ -11,8 +11,8 @@ data class UserJson(
     val email: String,
     @Json(name = "age")
     val age: Int,
-    @Json(name = "nearest_station")
-    val nearestStation: String,
+    @Json(name = "lineStationId")
+    val lineStationId: Int,
     @Json(name = "gender")
     val gender: Int,
     @Json(name = "token")

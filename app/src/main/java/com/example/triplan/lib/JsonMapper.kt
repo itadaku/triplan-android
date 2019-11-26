@@ -18,8 +18,8 @@ class JsonMapper {
             name = json.name,
             email = json.email,
             age =  json.age,
-            nearestStation = json.nearestStation,
-            gender = Gender.valueOf(json.gender.toString()),
+            lineStationId = json.lineStationId,
+            gender = Gender.values()[json.gender],
             token = json.token
         )
 

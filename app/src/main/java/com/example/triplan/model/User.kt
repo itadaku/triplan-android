@@ -6,6 +6,6 @@ data class User(
     val email: String,
     val age: Int,
     val gender: Gender,
-    val nearestStation: String,
+    val lineStationId: Int,
     var token: String
 )
