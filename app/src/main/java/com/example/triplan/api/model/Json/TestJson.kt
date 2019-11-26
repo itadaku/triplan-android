@@ -1,4 +1,4 @@
-package com.example.triplan.api.model
+package com.example.triplan.api.model.Json
 
 import com.example.triplan.model.Test
 import com.squareup.moshi.Json

@@ -5,8 +5,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
+import com.example.triplan.api.ApiResponse
 import com.example.triplan.ui.community.CommunityFragment
 import com.example.triplan.ui.now.NowFragment
 import com.example.triplan.ui.setting.SettingFragment
@@ -23,7 +25,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.getTest()
+        val response = viewModel.getTest()
+        if (response is ApiResponse.Failure) {
+            Toast.makeText(this, response.errorMessage(this), Toast.LENGTH_SHORT).show()
+        }
 
         supportFragmentManager.beginTransaction()
             .replace(mainHostFragmentLayout.id, TopFragment())
@@ -35,35 +40,35 @@ class MainActivity : AppCompatActivity() {
                     supportFragmentManager.beginTransaction()
                         .replace(mainHostFragmentLayout.id, TopFragment())
                         .commit()
-                    return@setOnNavigationItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.main_navigation_suggest -> {
                     supportFragmentManager.beginTransaction()
                         .replace(mainHostFragmentLayout.id, SuggestFragment())
                         .commit()
-                    return@setOnNavigationItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.main_navigation_now -> {
                     supportFragmentManager.beginTransaction()
                         .replace(mainHostFragmentLayout.id, NowFragment())
                         .commit()
-                    return@setOnNavigationItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.main_navigation_community -> {
                     supportFragmentManager.beginTransaction()
                         .replace(mainHostFragmentLayout.id, CommunityFragment())
                         .commit()
-                    return@setOnNavigationItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.main_navigation_setting -> {
                     supportFragmentManager.beginTransaction()
                         .replace(mainHostFragmentLayout.id, SettingFragment())
                         .commit()
-                    return@setOnNavigationItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 else -> {

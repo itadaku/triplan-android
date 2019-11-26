@@ -20,8 +20,8 @@
         <item>lady</item>
     </string-array>
     <string name="sign_up_text_nearest_station_text">nearest station:</string>
-    <string name="sign_up_text_nearest_station_line">line</string>
-    <string name="sign_up_text_nearest_station_station">station</string>
+    <string name="sign_up_text_nearest_station_line">line:</string>
+    <string name="sign_up_text_nearest_station_station">station:</string>
 
     <string name="main_bottom_navigation_item_title_home">home</string>
     <string name="main_bottom_navigation_item_title_suggest">suggest</string>
@@ -56,6 +56,11 @@
     </string-array>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
+
+    <!--  network  -->
+    <string name="network_client_error_message">クライアントエラー</string>
+    <string name="network_server_error_message">サーバーエラー</string>
+    <string name="network_failure_error">不明なエラー</string>
 
     <!-- ContentPlanDetailActivity -->
     <string name="content_plan_detail_link_text">リンク</string>
