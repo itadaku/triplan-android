@@ -1,31 +1,27 @@
-package com.example.triplan.ui.setting
+package com.example.triplan.ui.content_plan_traffic
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import kotlinx.android.synthetic.main.item_content_plan_traffic.view.*
 import kotlinx.android.synthetic.main.item_setting.view.*
 
-
-class SettingRecyclerViewAdapter(
-    private val settingLists: List<String>
+class ContentPlanTrafficRecyclerViewAdapter(
+    private val traffics: List<Traffic>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
     override fun getItemCount(): Int {
-        return settingLists.size
+        return traffics.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder.create(inflater, parent, R.layout.item_setting)
+        return ViewHolder.create(inflater, parent, R.layout.item_content_plan_traffic)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.settingText.text = settingLists[position]
+        holder.itemView.contentPlanTrafficTextDetail.text = traffics[position].detail
+        holder.itemView.contentPlanTrafficTextStation.text = traffics[position].station
     }
 }

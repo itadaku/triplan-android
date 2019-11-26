@@ -157,4 +157,83 @@
     <dimen name="setting_item_text_text_size">16sp</dimen>
     <dimen name="setting_item_text_padding_start">10dp</dimen>
     <dimen name="setting_item_background_radius">15dp</dimen>
+
+    <!-- ContentPlanDetailActivity -->
+    <dimen name="content_plan_detail_image_view_height">292dp</dimen>
+    <dimen name="content_plan_detail_appbar_translationz">-4dp</dimen>
+    <dimen name="content_plan_detail_toolbar_height">80dp</dimen>
+    <dimen name="content_plan_detail_nested_scroll_view_margin_top">-20dp</dimen>
+    <dimen name="content_plan_detail_nested_scroll_view_margin_bottom">80dp</dimen>
+    <dimen name="content_plan_detail_nested_scroll_view_translationz">2dp</dimen>
+    <dimen name="content_plan_detail_title_text_size">25sp</dimen>
+    <dimen name="content_plan_detail_title_margin_top">18dp</dimen>
+    <dimen name="content_plan_detail_title_padding_start">15dp</dimen>
+    <dimen name="content_plan_detail_description_text_size">15sp</dimen>
+    <dimen name="content_plan_detail_description_margin_start">13dp</dimen>
+    <dimen name="content_plan_detail_description_margin_top">7dp</dimen>
+    <dimen name="content_plan_detail_description_padding_start">15dp</dimen>
+    <dimen name="content_plan_detail_link_text_size">20sp</dimen>
+    <dimen name="content_plan_detail_link_margin_start">13dp</dimen>
+    <dimen name="content_plan_detail_link_margin_top">15dp</dimen>
+    <dimen name="content_plan_detail_link_padding_bottom">5dp</dimen>
+    <dimen name="content_plan_detail_image_web_width">18dp</dimen>
+    <dimen name="content_plan_detail_image_web_height">18dp</dimen>
+    <dimen name="content_plan_detail_image_web_margin_start">35dp</dimen>
+    <dimen name="content_plan_detail_image_web_margin_top">15dp</dimen>
+    <dimen name="content_plan_detail_text_web_text_size">16sp</dimen>
+    <dimen name="content_plan_detail_text_web_margin_top">15dp</dimen>
+    <dimen name="content_plan_detail_text_web_padding_start">5dp</dimen>
+    <dimen name="content_plan_detail_google_map_height">191dp</dimen>
+    <dimen name="content_plan_detail_google_map_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_image_map_margin_start">27dp</dimen>
+    <dimen name="content_plan_detail_image_map_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_padding_start">5dp</dimen>
+    <dimen name="content_plan_detail_text_map_address_text_size">16sp</dimen>
+    <dimen name="content_plan_detail_review_value_width">175dp</dimen>
+    <dimen name="content_plan_detail_review_value_height">162dp</dimen>
+    <dimen name="content_plan_detail_review_value_margin_start">12dp</dimen>
+    <dimen name="content_plan_detail_review_value_margin_top">17dp</dimen>
+    <dimen name="content_plan_detail_review_value_elevation">5dp</dimen>
+    <dimen name="content_plan_detail_review_value_num_margin_top">14dp</dimen>
+    <dimen name="content_plan_detail_review_value_num_text_size">80sp</dimen>
+    <dimen name="content_plan_detail_review_value_star_margin_start">10dp</dimen>
+    <dimen name="content_plan_detail_review_value_star_margin_top">106dp</dimen>
+    <dimen name="content_plan_detail_review_recycler_view_margin_top">25dp</dimen>
+
+    <!-- item review of ContentPlanDetailActivity -->
+    <dimen name="review_elevation">5dp</dimen>
+    <dimen name="review_margin_horizontal">13dp</dimen>
+    <dimen name="review_margin_bottom">15dp</dimen>
+    <dimen name="review_padding_bottom">14dp</dimen>
+    <dimen name="review_icon_layout_width">30dp</dimen>
+    <dimen name="review_icon_layout_height">30dp</dimen>
+    <dimen name="review_icon_margin_start">12dp</dimen>
+    <dimen name="review_icon_margin_top">8dp</dimen>
+    <dimen name="review_comment_text_size">18sp</dimen>
+    <dimen name="review_comment_margin_start">17dp</dimen>
+    <dimen name="review_comment_margin_end">9dp</dimen>
+    <dimen name="review_comment_margin_top">8dp</dimen>
+
+    <!-- item review graph of ContentPlanDetailActivity -->
+    <dimen name="review_graph_margin_horizontal">13dp</dimen>
+    <dimen name="review_graph_number_width">26dp</dimen>
+    <dimen name="review_graph_number_height">32dp</dimen>
+    <dimen name="review_graph_number_text_size">24sp</dimen>
+    <dimen name="review_graph_bar_width">50dp</dimen>
+    <dimen name="review_graph_bar_layout_height">14dp</dimen>
+    <dimen name="review_graph_bar_value_text_size">18sp</dimen>
+
+    <!-- item review star of ContentPlanDetailActivity -->
+    <dimen name="review_value_star_width">30dp</dimen>
+    <dimen name="review_value_star_height">30dp</dimen>
+
+    <!-- ContentPlanTrafficActivity -->
+    <dimen name="content_plan_traffic_recycler_view_height">0dp</dimen>
+    <dimen name="content_plan_traffic_recycler_view_margin_top">102dp</dimen>
+
+    <!-- items of ContentPlanTrafficActivity -->
+    <dimen name="content_plan_traffic_item_detail_text_size">16sp</dimen>
+    <dimen name="content_plan_traffic_item_detail_margin_start">36dp</dimen>
+    <dimen name="content_plan_traffic_item_detail_margin_top">12dp</dimen>
 </resources>
