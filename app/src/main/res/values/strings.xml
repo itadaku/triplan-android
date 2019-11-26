@@ -47,6 +47,7 @@
   
     <string name="top_fragment_title_text">Top</string>
 
+    <!-- SettingFragment -->
     <string name="setting_fragment_title_text">Setting</string>
     <string-array name="setting_item_array_text">
         <item>ユーザ情報編集</item>
@@ -54,6 +55,13 @@
         <item>不具合報告</item>
         <item>利用規約</item>
     </string-array>
+
+    <!-- SettingContactActivity -->
+    <string name="setting_contact_title">ご意見・ご要望</string>
+    <string name="setting_contact_button_text">送信</string>
+    <!-- SettingFeedbackActivity -->
+    <string name="setting_feedback_title">不具合報告</string>
+    <string name="setting_feedback_button_text">送信</string>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
 
