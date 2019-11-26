@@ -61,4 +61,12 @@
     <string name="network_client_error_message">クライアントエラー</string>
     <string name="network_server_error_message">サーバーエラー</string>
     <string name="network_failure_error">不明なエラー</string>
+
+    <!-- ContentPlanDetailActivity -->
+    <string name="content_plan_detail_link_text">リンク</string>
+    <string name="content_plan_detail_text_web_text">http://example.com</string>
+    <string name="content_plan_detail_text_inst_text">instagram</string>
+    <string name="content_plan_detail_map_text">マップ</string>
+    <string name="content_plan_detail_review_text">レビュー</string>
+
 </resources>
