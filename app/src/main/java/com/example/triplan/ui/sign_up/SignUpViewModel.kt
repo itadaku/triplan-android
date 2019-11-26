@@ -14,9 +14,7 @@ class SignUpViewModel : ViewModel() {
     private val userRepository = UserRepository()
     val user = MutableLiveData<User>()
 
-    fun sendSignUpData(
-        signUpBody: SignUpBody
-    ): ApiResponse {
+    fun sendSignUpData(signUpBody: SignUpBody): ApiResponse {
         var response: ApiResponse = ApiResponse.Failure(ApiResponse.ResponseType.Failure)
         userRepository.signUp(signUpBody, {
             user.postValue(it.data)
