@@ -1,11 +1,13 @@
 package com.example.triplan.ui.setting
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
 import com.example.triplan.lib.getSafety
+import com.example.triplan.ui.setting_contact.SettingContactActivity
 import kotlinx.android.synthetic.main.item_setting.view.*
 
 
@@ -23,5 +25,9 @@ class SettingRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         holder.itemView.settingText.text = settingLists.getSafety(position)
+        holder.itemView.setOnClickListener {
+            val settingContact = SettingContactActivity
+            settingContact.start(it.context)
+        }
     }
 }
