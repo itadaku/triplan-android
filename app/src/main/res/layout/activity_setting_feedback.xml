@@ -16,23 +16,38 @@
         app:layout_constraintTop_toTopOf="parent"/>
     <TextView
         android:id="@+id/settingFeedbackTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_contact_title_height"
         android:text="@string/setting_feedback_title"
         android:textSize="@dimen/setting_contact_title_text_size"
         android:textColor="@color/triplan_black"
-        android:layout_marginStart="@dimen/setting_contact_title_margin_start"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/setting_contact_title_padding_start"
         android:layout_marginTop="@dimen/setting_contact_title_margin_top"
-        app:layout_constraintStart_toEndOf="@id/settingFeedbackBack"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <EditText
+    <TextView
         android:id="@+id/settingFeedbackText"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/setting_contact_text_height"
-        android:inputType="textMultiLine"
-        android:layout_marginHorizontal="@dimen/setting_contact_text_margin_horizontal"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_contact_text"
+        android:textSize="@dimen/setting_contact_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:paddingStart="@dimen/setting_contact_text_padding_start"
+        android:layout_marginStart="@dimen/setting_contact_text_margin_start"
+        android:layout_marginTop="@dimen/setting_contact_text_margin_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/settingFeedbackTitle"/>
+    <EditText
+        android:id="@+id/settingFeedbackForm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_contact_form_height"
+        android:inputType="textMultiLine"
+        android:background="@drawable/background_setting_form"
+        android:layout_marginStart="@dimen/setting_contact_form_margin_layout_start"
+        android:layout_marginEnd="@dimen/setting_contact_form_margin_layout_end"
+        android:layout_marginTop="@dimen/setting_contact_form_margin_layout_top"
+        app:layout_constraintTop_toBottomOf="@id/settingFeedbackText"/>
     <Button
         android:id="@+id/settingFeedbackButton"
         android:layout_width="match_parent"
@@ -40,6 +55,7 @@
         android:text="@string/setting_feedback_button_text"
         android:textSize="@dimen/setting_contact_button_text_size"
         android:textColor="@color/triplan_white"
+        android:textAllCaps="false"
         android:background="@color/triplan_blue"
         app:layout_constraintBottom_toBottomOf="parent"/>
 

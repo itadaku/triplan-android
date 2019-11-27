@@ -58,9 +58,11 @@
 
     <!-- SettingContactActivity -->
     <string name="setting_contact_title">Request</string>
+    <string name="setting_contact_text">sentence:</string>
     <string name="setting_contact_button_text">send</string>
     <!-- SettingFeedbackActivity -->
     <string name="setting_feedback_title">Feed Back</string>
+    <string name="setting_feedback_text">sentence:</string>
     <string name="setting_feedback_button_text">send</string>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
