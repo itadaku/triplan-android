@@ -6,21 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.triplan.R
+import com.example.triplan.model.SettingElement
+import com.example.triplan.model.SettingElementId
 import com.example.triplan.ui.setting_contact.SettingContactActivity
 import com.example.triplan.ui.setting_feedback.SettingFeedbackActivity
 import kotlinx.android.synthetic.main.fragment_setting.*
-
-data class SettingLists(
-    val id: SettingListId,
-    val name: String
-)
-
-enum class SettingListId(val value: Int) {
-    EDIT_USER_INFORMATION(0),
-    CONTACT(1),
-    FEEDBACK(2),
-    TERMS_OF_SERVICE(3)
-}
 
 class SettingFragment: Fragment() {
 
@@ -35,26 +25,26 @@ class SettingFragment: Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val settingLists = listOf<SettingLists>(
-            SettingLists(SettingListId.EDIT_USER_INFORMATION, "ユーザ情報編集"),
-            SettingLists(SettingListId.CONTACT, "ご意見・ご要望"),
-            SettingLists(SettingListId.FEEDBACK, "不具合報告"),
-            SettingLists(SettingListId.TERMS_OF_SERVICE, "利用規約")
+        val settingLists = listOf<SettingElement>(
+            SettingElement(SettingElementId.EDIT_USER_INFORMATION, "ユーザ情報編集"),
+            SettingElement(SettingElementId.CONTACT, "ご意見・ご要望"),
+            SettingElement(SettingElementId.FEEDBACK, "不具合報告"),
+            SettingElement(SettingElementId.TERMS_OF_SERVICE, "利用規約")
         )
         val settingRecyclerViewAdapter = SettingRecyclerViewAdapter(settingLists)
         settingRecyclerViewAdapter.setOnItemClickListener(object : SettingRecyclerViewAdapter.OnItemClickListener {
-            override fun onClick(view: View, data: SettingLists) {
-                when(data.id) {
-                    SettingListId.EDIT_USER_INFORMATION -> {
+            override fun onClick(view: View, settingElement: SettingElement) {
+                when(settingElement.id) {
+                    SettingElementId.EDIT_USER_INFORMATION -> {
 
                     }
-                    SettingListId.CONTACT -> {
+                    SettingElementId.CONTACT -> {
                         SettingContactActivity.start(view.context)
                     }
-                    SettingListId.FEEDBACK -> {
+                    SettingElementId.FEEDBACK -> {
                         SettingFeedbackActivity.start(view.context)
                     }
-                    SettingListId.TERMS_OF_SERVICE -> {
+                    SettingElementId.TERMS_OF_SERVICE -> {
 
                     }
                 }

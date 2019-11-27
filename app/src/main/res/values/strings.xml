@@ -57,11 +57,11 @@
     </string-array>
 
     <!-- SettingContactActivity -->
-    <string name="setting_contact_title">ご意見・ご要望</string>
-    <string name="setting_contact_button_text">送信</string>
+    <string name="setting_contact_title">Request</string>
+    <string name="setting_contact_button_text">send</string>
     <!-- SettingFeedbackActivity -->
-    <string name="setting_feedback_title">不具合報告</string>
-    <string name="setting_feedback_button_text">送信</string>
+    <string name="setting_feedback_title">Feed Back</string>
+    <string name="setting_feedback_button_text">send</string>
 
     <string name="content_plan_suggest_button_text">このプランにする</string>
 

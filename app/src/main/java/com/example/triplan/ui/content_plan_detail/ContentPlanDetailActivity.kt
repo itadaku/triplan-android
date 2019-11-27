@@ -6,17 +6,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
+import com.example.triplan.model.Review
+import com.example.triplan.model.ReviewGraph
 import kotlinx.android.synthetic.main.activity_content_plan_detail.*
 import java.lang.Exception
-
-data class Review(
-    val image: Int,
-    val comment: String
-)
-data class ReviewGraph(
-    val number: Int,
-    val value: Int
-)
 
 class ContentPlanDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

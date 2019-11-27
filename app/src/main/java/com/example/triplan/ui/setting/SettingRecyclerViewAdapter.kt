@@ -8,13 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
 import com.example.triplan.lib.getSafety
+import com.example.triplan.model.SettingElement
 import com.example.triplan.ui.setting_contact.SettingContactActivity
 import com.example.triplan.ui.setting_feedback.SettingFeedbackActivity
 import kotlinx.android.synthetic.main.item_setting.view.*
 
 
 class SettingRecyclerViewAdapter(
-    private val settingLists: List<SettingLists>
+    private val settingLists: List<SettingElement>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     lateinit var listener: OnItemClickListener
 
@@ -36,7 +37,7 @@ class SettingRecyclerViewAdapter(
     }
 
     interface OnItemClickListener {
-        fun onClick(view: View, data: SettingLists)
+        fun onClick(view: View, settingElement: SettingElement)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
