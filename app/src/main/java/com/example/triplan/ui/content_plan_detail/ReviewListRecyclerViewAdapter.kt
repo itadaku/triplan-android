@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import com.example.triplan.model.Review
 import kotlinx.android.synthetic.main.item_review.view.*
 
 class ReviewListRecyclerViewAdapter(

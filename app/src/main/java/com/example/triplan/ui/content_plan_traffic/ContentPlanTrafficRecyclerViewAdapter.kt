@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import com.example.triplan.model.Traffic
 import kotlinx.android.synthetic.main.item_content_plan_traffic.view.*
 import kotlinx.android.synthetic.main.item_setting.view.*
 
