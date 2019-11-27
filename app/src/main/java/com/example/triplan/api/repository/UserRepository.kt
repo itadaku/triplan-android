@@ -48,8 +48,8 @@ class UserRepository {
 
     fun singIn(
         signInBody: SignInBody,
-        success: ((User) -> Unit),
-        failure: (() -> Unit)
+        success: ((ApiResponse.Success<User>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
     ) {
         ApiClient<UserService>()
             .getService(UserService::class.java)
@@ -60,8 +60,17 @@ class UserRepository {
                 }
 
                 override fun onResponse(call: Call<UserJson>, response: Response<UserJson>) {
-                    response.body()?.let {
-                        success.invoke(JsonMapper.toMapping(it))
+                    when (response.responseType()) {
+                        ApiResponse.ResponseType.Success -> {
+                            response.body()?.let {
+                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType()))
+                            }
+                        }
+
+                        else -> {
+                            Log.e("Error Code", response.code().toString())
+                            failure.invoke(ApiResponse.Failure(response.responseType()))
+                        }
                     }
                 }
             })
