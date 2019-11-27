@@ -11,6 +11,7 @@ import com.example.triplan.R
 import com.example.triplan.api.model.Body.SignUpBody
 import com.example.triplan.data.UserStore
 import com.example.triplan.lib.RegexPattern
+import com.example.triplan.lib.isMatch
 import com.example.triplan.model.Gender
 import com.example.triplan.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -56,7 +57,7 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (email.isEmpty() || Regex(RegexPattern.EMAIL).containsMatchIn(email).not()) {
+            if (email.isEmpty() || email.isMatch(RegexPattern.EMAIL).not()) {
                 Toast.makeText(this, "メールアドレスを正しく入力してください", Toast.LENGTH_SHORT).show()
                 view.isEnabled = true
                 return@setOnClickListener

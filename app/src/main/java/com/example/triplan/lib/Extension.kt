@@ -9,3 +9,5 @@ fun <T> Response<T>.responseType() = when (this.code()) {
     in 500..599 -> ApiResponse.ResponseType.ServerError
     else -> ApiResponse.ResponseType.Failure
 }
+
+fun String.isMatch(pattern: String) = Regex(pattern).containsMatchIn(this)
