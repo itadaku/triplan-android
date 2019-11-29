@@ -1,6 +1,6 @@
 package com.example.triplan.api.repository
 
-import android.util. Log
+import android.util.Log
 import com.example.triplan.api.ApiClient
 import com.example.triplan.api.ApiResponse
 import com.example.triplan.api.model.Body.SignInBody
@@ -56,7 +56,7 @@ class UserRepository {
             .signIn(signInBody)
             .enqueue(object : Callback<UserJson>{
                 override fun onFailure(call: Call<UserJson>, t: Throwable) {
-
+                    failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
                 }
 
                 override fun onResponse(call: Call<UserJson>, response: Response<UserJson>) {

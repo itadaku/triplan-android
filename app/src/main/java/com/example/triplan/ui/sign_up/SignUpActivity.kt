@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
 import com.example.triplan.api.model.Body.SignUpBody
@@ -25,6 +26,14 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
+
+        userStore.user.observe(this, Observer {
+            userStore.token.postValue(it.token)
+        })
+
+        userStore.token.observe(this, Observer {
+            userStore.saveToken(applicationContext)
+        })
 
         val nearestStationLineSpinnerAdapter = ArrayAdapter(
             this,
