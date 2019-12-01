@@ -1,9 +1,6 @@
 package com.example.triplan.lib
 
-import com.example.triplan.api.model.Json.LineJson
-import com.example.triplan.api.model.Json.StationJson
-import com.example.triplan.api.model.Json.TestJson
-import com.example.triplan.api.model.Json.UserJson
+import com.example.triplan.api.model.Json.*
 import com.example.triplan.model.*
 
 class JsonMapper {
@@ -28,9 +25,17 @@ class JsonMapper {
             name = json.name
         )
 
+        fun toMapping(json: LinesJson) = Lines(
+            json.lines.map { Line(it.id, it.name) }.toList()
+        )
+
         fun toMapping(json: StationJson) = Station(
             id =  json.id,
             name = json.name
+        )
+
+        fun toMapping(json: StationsJson) = Stations (
+            json.stations.map { Station(it.id, it.name) }.toList()
         )
     }
 }

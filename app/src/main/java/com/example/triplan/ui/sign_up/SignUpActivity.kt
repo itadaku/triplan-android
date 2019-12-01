@@ -3,9 +3,12 @@ package com.example.triplan.ui.sign_up
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
 import com.example.triplan.api.model.Body.SignUpBody
@@ -26,24 +29,70 @@ class SignUpActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(SignUpViewModel::class.java)
 
-        val nearestStationLineSpinnerAdapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-            arrayOf("山手線", "京浜東北線", "中央線", "東海道線", "常磐線", "埼京線"))
+        userStore.user.observe(this, Observer {
+            userStore.token.postValue(it.token)
+        })
 
-        nearestStationLineSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        signUpSpinnerNearestStationLine.adapter =nearestStationLineSpinnerAdapter
+        userStore.token.observe(this, Observer {
+            userStore.saveToken(applicationContext)
+        })
+
+        viewModel.line.observe(this, Observer {
+            val position = signUpSpinnerNearestStationLine.selectedItemPosition
+            val adapter = signUpSpinnerNearestStationLine.adapter as LineArrayAdapter
+            viewModel.line.value?.let { line ->
+                // apiを叩いて、station adapterに値をセットする
+                viewModel.getStations(line, {
+                    val stations = it.data.stations
+                    val stationsArrayAdapter = StationArrayAdapter(
+                        this,
+                        android.R.layout.simple_spinner_item,
+                        R.layout.item_spinner_dropdown,
+                        stations)
+                    signUpSpinnerNearestStationStation.adapter = stationsArrayAdapter
+                }, {
+                    Toast.makeText(this, it.errorMessage(this), Toast.LENGTH_SHORT).show()
+                })
+            }
+        })
+
+        viewModel.getLines({
+            val lines = it.data.lines
+            val nearestStationLineSpinnerAdapter = LineArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item,
+                R.layout.item_spinner_dropdown,
+                lines
+            )
+            signUpSpinnerNearestStationLine.adapter =nearestStationLineSpinnerAdapter
+        }, {
+            Toast.makeText(this, it.errorMessage(this), Toast.LENGTH_SHORT).show()
+        })
 
         val genderList = resources.getStringArray(R.array.sign_up_text_gender_form_array_text)
         val signUpSpinnerGenderAdapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, genderList)
         signUpSpinnerGender.adapter = signUpSpinnerGenderAdapter
 
-        val nearestStationStationSpinnerAdapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-            (1..10).map { "${it}駅" }.toTypedArray())
-        nearestStationStationSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        signUpSpinnerNearestStationStation.adapter = nearestStationStationSpinnerAdapter
+        signUpSpinnerNearestStationLine.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                when (signUpSpinnerNearestStationLine.adapter) {
+                    is LineArrayAdapter -> {
+                        val adapter = signUpSpinnerNearestStationLine.adapter as LineArrayAdapter
+                        val line = adapter.getItem(position)
+                        line?.let {
+                            viewModel.line.value = it
+                        }
+                    }
+                    else -> {
+
+                    }
+                }
+            }
+        }
 
         signUpButton.setOnClickListener { view ->
             view.isEnabled = false

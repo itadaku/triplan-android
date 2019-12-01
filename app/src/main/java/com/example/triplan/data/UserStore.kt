@@ -1,6 +1,7 @@
 package com.example.triplan.data
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.triplan.R
 import com.example.triplan.model.User
@@ -10,9 +11,9 @@ object UserStore {
     val token = MutableLiveData<String>()
     fun saveToken(context: Context) {
         val sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-        user.value?.let {
+        token.value?.let {
             sharedPreferences.edit()
-                .putString(DataKey.TOKEN.key, it.token)
+                .putString(DataKey.TOKEN.key, it)
                 .apply()
         }
     }
@@ -20,6 +21,6 @@ object UserStore {
     fun setToken(context: Context) {
         val sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
         val tokenData = sharedPreferences.getString(DataKey.TOKEN.key, "") ?: ""
-        token.postValue(tokenData)
+        token.value = tokenData
     }
  }

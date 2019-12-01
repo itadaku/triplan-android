@@ -165,6 +165,7 @@
         android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
         android:layout_marginStart="@dimen/sign_up_text_form_margin_start"
         android:layout_marginEnd="@dimen/sign_up_text_form_margin_end"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toEndOf="@id/signUpTextNearestStationLine"
         app:layout_constraintTop_toBottomOf="@id/signUpTextNearestStation" />
 
@@ -187,6 +188,7 @@
         android:layout_marginTop="@dimen/sign_up_spinner_nearest_station_line_margin_top"
         android:layout_marginStart="@dimen/sign_up_text_form_margin_start"
         android:layout_marginEnd="@dimen/sign_up_text_form_margin_end"
+        android:spinnerMode="dialog"
         app:layout_constraintStart_toEndOf="@id/signUpTextNearestStation"
         app:layout_constraintTop_toBottomOf="@id/signUpSpinnerNearestStationLine" />
 

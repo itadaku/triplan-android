@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import com.example.triplan.lib.getSafety
 import kotlinx.android.synthetic.main.item_setting.view.*
 
 
 class SettingRecyclerViewAdapter(
     private val settingLists: List<String>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
     override fun getItemCount(): Int {
         return settingLists.size
     }
@@ -22,6 +22,6 @@ class SettingRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.settingText.text = settingLists[position]
+        holder.itemView.settingText.text = settingLists.getSafety(position)
     }
 }

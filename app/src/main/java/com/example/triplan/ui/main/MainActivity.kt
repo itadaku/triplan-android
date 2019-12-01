@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
+import com.example.triplan.data.UserStore
 import com.example.triplan.ui.community.CommunityFragment
 import com.example.triplan.ui.now.NowFragment
 import com.example.triplan.ui.setting.SettingFragment
@@ -17,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
+    private val userStore = UserStore
     private var backToast: Toast? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
