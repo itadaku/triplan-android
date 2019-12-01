@@ -31,16 +31,16 @@ class SettingRepository {
                 }
 
                 override fun onResponse(call: Call<SettingJson>, response: Response<SettingJson>) {
-                    when (response.responseType()) {
+                    when (response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
-                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType()))
+                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType))
                             }
                         }
 
                         else -> {
                             Log.d("Error Code", response.code().toString())
-                            failure.invoke(ApiResponse.Failure(response.responseType()))
+                            failure.invoke(ApiResponse.Failure(response.responseType))
                         }
                     }
                 }
@@ -62,16 +62,16 @@ class SettingRepository {
                 }
 
                 override fun onResponse(call: Call<SettingJson>, response: Response<SettingJson>) {
-                    when (response.responseType()) {
+                    when (response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
-                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType()))
+                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType))
                             }
                         }
 
                         else -> {
                             Log.d("Error Code", response.code().toString())
-                            failure.invoke(ApiResponse.Failure(response.responseType()))
+                            failure.invoke(ApiResponse.Failure(response.responseType))
                         }
                     }
                 }
