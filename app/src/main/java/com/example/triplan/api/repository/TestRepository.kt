@@ -28,7 +28,7 @@ class TestRepository {
                 }
 
                 override fun onResponse(call: Call<TestJson>, response: Response<TestJson>) {
-                    when (response.responseType()) {
+                    when (response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
                                 success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), ApiResponse.ResponseType.Success))
@@ -36,7 +36,7 @@ class TestRepository {
                         }
 
                         else -> {
-                            failure.invoke(ApiResponse.Failure(response.responseType()))
+                            failure.invoke(ApiResponse.Failure(response.responseType))
                         }
                     }
                 }

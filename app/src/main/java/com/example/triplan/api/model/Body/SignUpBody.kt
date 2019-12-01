@@ -10,11 +10,7 @@ data class SignUpBody(
     val email: String,
     @Json(name = "password")
     val password: String,
-//    @Json(name = "line_id")
-//    val lineId: Int,
-//    @Json(name = "station_id")
-//    val stationId: Int,
-    @Json(name = "lineStationId")
+    @Json(name = "line_station_id")
     val stationLineId: Int,
     @Json(name = "age")
     val age: Int,

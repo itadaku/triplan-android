@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/spinnerItemTextView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:textSize="@dimen/spinner_item_text_view_text_size"
+    android:textColor="@color/triplan_blue"
+    android:gravity="center|start"
+    android:elevation="@dimen/spinner_item_text_view_elevation"
+    android:paddingStart="@dimen/spinner_item_text_view_padding_start"
+    android:paddingTop="@dimen/spinner_item_text_view_padding_top"
+    android:paddingBottom="@dimen/spinner_item_text_view_padding_bottom"
+/>
+

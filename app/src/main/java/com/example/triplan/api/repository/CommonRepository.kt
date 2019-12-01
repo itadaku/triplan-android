@@ -3,33 +3,34 @@ package com.example.triplan.api.repository
 import android.util.Log
 import com.example.triplan.api.ApiClient
 import com.example.triplan.api.ApiResponse
-import com.example.triplan.api.model.Body.SignInBody
-import com.example.triplan.api.model.Body.SignUpBody
-import com.example.triplan.api.model.Json.UserJson
-import com.example.triplan.api.service.UserService
+import com.example.triplan.api.model.Json.LinesJson
+import com.example.triplan.api.model.Json.StationJson
+import com.example.triplan.api.model.Json.StationsJson
+import com.example.triplan.api.service.CommonService
 import com.example.triplan.lib.JsonMapper
 import com.example.triplan.lib.responseType
-import com.example.triplan.model.User
+import com.example.triplan.model.Line
+import com.example.triplan.model.Lines
+import com.example.triplan.model.Stations
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserRepository {
-    fun signUp(
-        signUpBody: SignUpBody,
-        success: ((ApiResponse.Success<User>) -> Unit),
+class CommonRepository {
+    fun getLines(
+        success: ((ApiResponse.Success<Lines>) -> Unit),
         failure: ((ApiResponse.Failure) -> Unit)
     ) {
-        ApiClient<UserService>()
-            .getService(UserService::class.java)
-            .signUp(signUpBody)
-            .enqueue(object : Callback<UserJson>{
-                override fun onFailure(call: Call<UserJson>, t: Throwable) {
+        ApiClient<CommonService>()
+            .getService(CommonService::class.java)
+            .getLInes()
+            .enqueue(object : Callback<LinesJson>{
+                override fun onFailure(call: Call<LinesJson>, t: Throwable) {
                     Log.e("Network Failure", t.message.toString())
                     failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
                 }
 
-                override fun onResponse(call: Call<UserJson>, response: Response<UserJson>) {
+                override fun onResponse(call: Call<LinesJson>, response: Response<LinesJson>) {
                     when (response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
@@ -46,20 +47,22 @@ class UserRepository {
             })
     }
 
-    fun singIn(
-        signInBody: SignInBody,
-        success: ((ApiResponse.Success<User>) -> Unit),
+    fun getStations(
+        line: Line,
+        success: ((ApiResponse.Success<Stations>) -> Unit),
         failure: ((ApiResponse.Failure) -> Unit)
     ) {
-        ApiClient<UserService>()
-            .getService(UserService::class.java)
-            .signIn(signInBody)
-            .enqueue(object : Callback<UserJson>{
-                override fun onFailure(call: Call<UserJson>, t: Throwable) {
+        ApiClient<CommonService>()
+            .getService(CommonService::class.java)
+            .getStations(line.id)
+            .enqueue(object : Callback<StationsJson> {
+                override fun onFailure(call: Call<StationsJson>, t: Throwable) {
+                    Log.e("Network Failure", t.message.toString())
                     failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
                 }
 
-                override fun onResponse(call: Call<UserJson>, response: Response<UserJson>) {
+                override fun onResponse(call: Call<StationsJson>, response: Response<StationsJson>
+                ) {
                     when (response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
@@ -73,7 +76,8 @@ class UserRepository {
                         }
                     }
                 }
-            })
-
+        })
     }
+
+
 }

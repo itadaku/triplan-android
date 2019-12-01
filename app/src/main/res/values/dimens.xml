@@ -236,4 +236,12 @@
     <dimen name="content_plan_traffic_item_detail_text_size">16sp</dimen>
     <dimen name="content_plan_traffic_item_detail_margin_start">36dp</dimen>
     <dimen name="content_plan_traffic_item_detail_margin_top">12dp</dimen>
+
+    <!-- dropdown item of spinner  -->
+    <dimen name="spinner_item_text_view_text_size">16sp</dimen>
+    <dimen name="spinner_item_text_view_elevation">5dp</dimen>
+    <dimen name="spinner_item_text_view_padding_start">10dp</dimen>
+    <dimen name="spinner_item_text_view_padding_top">15dp</dimen>
+    <dimen name="spinner_item_text_view_padding_bottom">15dp</dimen>
+
 </resources>
