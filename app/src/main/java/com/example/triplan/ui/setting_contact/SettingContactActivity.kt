@@ -6,7 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.triplan.R
 import android.content.Context
 import android.content.Intent
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.api.model.Body.SettingBody
@@ -28,6 +32,12 @@ class SettingContactActivity : AppCompatActivity() {
             finish()
         }
 
+        settingContactForm.setOnClickListener {
+            val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            inputMethodManager.showSoftInput(it, 0)
+            it.requestFocus()
+        }
+
         settingContactButton.setOnClickListener { view ->
             view.isEnabled = false
             val text = settingContactText.text.toString().trim()
@@ -45,6 +55,14 @@ class SettingContactActivity : AppCompatActivity() {
                 view.isEnabled = true
             })
         }
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val settingContactConstraintLayout = findViewById<ConstraintLayout>(R.id.settingContactConstraintLayout)
+        inputMethodManager.hideSoftInputFromWindow(settingContactConstraintLayout.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        settingContactConstraintLayout.requestFocus()
+        return super.onTouchEvent(event)
     }
 
     companion object {

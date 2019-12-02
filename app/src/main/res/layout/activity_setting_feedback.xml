@@ -2,8 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settingFeedbackConstaintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/settingFeedbackBack"
@@ -44,6 +47,9 @@
         android:layout_height="@dimen/setting_contact_form_height"
         android:inputType="textMultiLine"
         android:background="@drawable/background_setting_form"
+        android:gravity="top"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_marginStart="@dimen/setting_contact_form_margin_layout_start"
         android:layout_marginEnd="@dimen/setting_contact_form_margin_layout_end"
         android:layout_marginTop="@dimen/setting_contact_form_margin_layout_top"
