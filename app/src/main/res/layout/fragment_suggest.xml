@@ -23,53 +23,78 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/suggestFrame"
         android:layout_width="@dimen/suggest_frame_width"
-        android:layout_height="@dimen/suggest_frame_height"
+        android:layout_height="match_parent"
         android:elevation="@dimen/suggest_frame_elevation"
         android:background="@drawable/suggest_inner_background"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <TextView
-            android:id="@+id/suggestTextPurpose"
+            android:id="@+id/suggestAgricultureText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/suggest_text_purpose"
+            android:text="農業"
             android:textSize="@dimen/suggest_general_text_size"
             android:textColor="@color/triplan_black"
             android:layout_marginStart="@dimen/suggest_text_general_margin_start"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <EditText
-            android:id="@+id/suggestTextPurposeForm"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/suggest_general_height"
-            android:inputType="text"
-            android:textSize="@dimen/suggest_general_text_size"
-            android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
-            android:layout_marginEnd="@dimen/suggest_text_form_purpose_margin_end"
-            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
-            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextPurpose"/>
-
-        <TextView
-            android:id="@+id/suggestTextTag"
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/suggestAgricultureSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/suggest_text_tag"
-            android:textSize="@dimen/suggest_text_tag_text_size"
-            android:textColor="@color/triplan_blue"
-            android:background="@drawable/suggest_text_tag"
-            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
-            android:layout_marginTop="@dimen/suggest_text_tag_margin_top"
-            android:paddingStart="@dimen/suggest_text_tag_padding"
-            android:paddingEnd="@dimen/suggest_text_tag_padding"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextPurposeForm"
+            app:layout_constraintTop_toTopOf="@id/suggestAgricultureText"
+            app:layout_constraintBottom_toBottomOf="@id/suggestAgricultureText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="50dp"
             />
+
+        <TextView
+            android:id="@+id/suggestForestryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="林業"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="@dimen/suggest_text_general_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestAgricultureText"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/suggestForestrySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/suggestForestryText"
+            app:layout_constraintBottom_toBottomOf="@id/suggestForestryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="50dp" />
+
+        <TextView
+            android:id="@+id/suggestFishingIndustryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="水産業"
+            android:textSize="@dimen/suggest_general_text_size"
+            android:textColor="@color/triplan_black"
+            android:layout_marginStart="@dimen/suggest_text_general_margin_start"
+            android:layout_marginTop="@dimen/suggest_text_general_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suggestForestryText"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/suggestFishingIndustrySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/suggestFishingIndustryText"
+            app:layout_constraintBottom_toBottomOf="@id/suggestFishingIndustryText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="50dp" />
 
         <TextView
             android:id="@+id/suggestTextBudget"
@@ -81,68 +106,34 @@
             android:layout_marginStart="@dimen/suggest_text_general_margin_start"
             android:layout_marginTop="@dimen/suggest_text_budget_margin_top"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextPurposeForm"/>
+            app:layout_constraintTop_toBottomOf="@id/suggestFishingIndustryText"/>
 
         <TextView
-            android:id="@+id/suggestTextBudgetdollar1"
+            android:id="@+id/suggestTextBudgetDollar1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/suggest_general_height"
             android:text="@string/suggest_text_dollar"
             android:textSize="@dimen/suggest_general_text_size"
             android:textColor="@color/triplan_black"
             android:paddingTop="@dimen/suggest_text_general_padding_top"
-            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMinForm"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetForm"
+            app:layout_constraintTop_toTopOf="@id/suggestTextBudgetForm"
+            app:layout_constraintBottom_toBottomOf="@id/suggestTextBudgetForm" />
 
         <EditText
-            android:id="@+id/suggestTextBudgetMinForm"
-            android:layout_width="@dimen/suggest_text_form_budget_width"
+            android:id="@+id/suggestTextBudgetForm"
+            android:layout_width="@dimen/suggest_general_width"
             android:layout_height="@dimen/suggest_general_height"
             android:inputType="number"
+            android:hint="0,000円"
             android:textSize="@dimen/suggest_general_text_size"
-            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
-            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
-            android:layout_marginStart="@dimen/suggest_text_form_general_margin_start"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetTilde"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget" />
-
-        <TextView
-            android:id="@+id/suggestTextBudgetTilde"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/suggest_general_height"
-            android:text="@string/suggest_text_tilde"
-            android:textSize="@dimen/suggest_general_text_size"
-            android:textColor="@color/triplan_black"
-            android:paddingTop="@dimen/suggest_text_general_padding_top"
-            app:layout_constraintStart_toEndOf="@id/suggestTextBudgetMinForm"
-            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMaxForm"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
-
-        <TextView
-            android:id="@+id/suggestTextBudgetdollar2"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/suggest_general_height"
-            android:text="@string/suggest_text_dollar"
-            android:textSize="@dimen/suggest_general_text_size"
-            android:textColor="@color/triplan_black"
-            android:paddingTop="@dimen/suggest_text_general_padding_top"
-            app:layout_constraintEnd_toStartOf="@id/suggestTextBudgetMaxForm"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
-
-        <EditText
-            android:id="@+id/suggestTextBudgetMaxForm"
-            android:layout_width="@dimen/suggest_text_form_budget_width"
-            android:layout_height="@dimen/suggest_general_height"
-            android:inputType="number"
-            android:textSize="@dimen/suggest_general_text_size"
-            android:layout_marginStart="@dimen/suggest_text_form_budget_max_margin_start"
-            android:layout_marginEnd="@dimen/suggest_text_form_budget_margin_end"
-            android:paddingStart="@dimen/suggest_text_form_general_padding_horizon"
-            android:paddingEnd="@dimen/suggest_text_form_general_padding_horizon"
-            app:layout_constraintStart_toEndOf="@id/suggestTextBudgetTilde"
+            android:textAlignment="center"
+            android:layout_marginEnd="50dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
+            app:layout_constraintTop_toTopOf="@id/suggestTextBudget"
+            app:layout_constraintBottom_toBottomOf="@id/suggestTextBudget"
+            />
+
 
         <TextView
             android:id="@+id/suggestTextTime"
@@ -154,7 +145,7 @@
             android:layout_marginStart="@dimen/suggest_text_general_margin_start"
             android:layout_marginTop="@dimen/suggest_text_time_margin_top"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/suggestTextBudgetdollar2"/>
+            app:layout_constraintTop_toBottomOf="@id/suggestTextBudget"/>
 
         <TextView
             android:id="@+id/suggestTextTimeFromForm"

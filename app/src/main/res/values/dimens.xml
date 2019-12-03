@@ -61,13 +61,15 @@
     <dimen name="suggest_frame_elevation">2dp</dimen>
     <dimen name="suggest_general_text_size">18sp</dimen>
     <dimen name="suggest_general_height">40dp</dimen>
+    <dimen name="suggest_general_width">100dp</dimen>
     <dimen name="suggest_text_general_margin_start">19dp</dimen>
+    <dimen name="suggest_text_general_margin_top">25dp</dimen>
     <dimen name="suggest_text_general_padding_top">10dp</dimen>
     <dimen name="suggest_text_purpose_margin_top">17dp</dimen>
     <dimen name="suggest_text_tag_text_size">16sp</dimen>
     <dimen name="suggest_text_tag_margin_top">10dp</dimen>
     <dimen name="suggest_text_tag_padding">15dp</dimen>
-    <dimen name="suggest_text_budget_margin_top">65dp</dimen>
+    <dimen name="suggest_text_budget_margin_top">40dp</dimen>
     <dimen name="suggest_text_time_margin_top">52dp</dimen>
     <dimen name="suggest_text_form_general_margin_start">25dp</dimen>
     <dimen name="suggest_text_form_general_padding_horizon">10dp</dimen>

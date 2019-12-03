@@ -1,30 +1,33 @@
-package com.example.triplan.ui.content_plan_traffic
+package com.example.triplan.ui.content_plan
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
 import com.example.triplan.lib.getSafety
-import kotlinx.android.synthetic.main.item_content_plan_traffic.view.*
+import com.example.triplan.model.Schedule
 import kotlinx.android.synthetic.main.item_setting.view.*
 
-class ContentPlanTrafficRecyclerViewAdapter(
-    private val traffics: List<Traffic>
+class ContentPlanScheduleRecyclerViewAdapter (
+    private val scheduleList: List<Schedule>,
+    private val setOnItemClickListener: ((View, Schedule) -> Unit)
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
-        return traffics.size
+        return scheduleList.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder.create(inflater, parent, R.layout.item_content_plan_traffic)
+        return ViewHolder.create(inflater, parent, R.layout.item_setting)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        traffics.getSafety(position)?.let {
-            holder.itemView.contentPlanTrafficTextDetail.text = it.detail
-            holder.itemView.contentPlanTrafficTextStation.text = it.station
+        scheduleList.getSafety(position)?.let { schedule ->
+            holder.itemView.settingText.text = schedule.title
+            holder.itemView.setOnClickListener { setOnItemClickListener.invoke(it, schedule) }
         }
     }
 }

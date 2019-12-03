@@ -24,6 +24,7 @@ class TopFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         return inflater.inflate(R.layout.fragment_top, container, false)
 
     }
@@ -32,7 +33,6 @@ class TopFragment: Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         this.activity?.let {fragmentActivity ->
-            viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
             viewModel.planStore.topPlans.observe(fragmentActivity, Observer { topPlans ->
                 val topContentsListRecyclerViewAdapter =  TopContentsListRecyclerViewAdapter(topPlans, { view, plan ->
                     context?.let {

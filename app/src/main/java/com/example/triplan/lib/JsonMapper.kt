@@ -80,6 +80,38 @@ class JsonMapper {
                     it.purpose)
             }.toList())
         }.toList()
+
+        fun toMapping(json: PlanInfoJson): PlanInfo {
+            val plan = Plan(
+                json.plan.id,
+                json.plan.title,
+                json.plan.image,
+                json.plan.review,
+                json.plan.daysNights,
+                json.plan.minBudget,
+                json.plan.maxBudget,
+                json.plan.numberOfPeople,
+                json.plan.purpose)
+
+            val schedulesList = mutableListOf<Schedules>()
+            for (i in 1..json.plan.daysNights) {
+                val days = i
+                val scheduleList = json.schedules
+                    .filter{ it.days == i}
+                    .map {
+                        Schedule(
+                            it.id,
+                            it.title,
+                            it.body,
+                            it.startTime,
+                            it.endTime,
+                            it.imagePath,
+                            ScheduleType.getScheduleType(it.type) )}
+                    .toList()
+                schedulesList.add(Schedules(days, scheduleList))
+            }
+            return PlanInfo(plan, schedulesList)
+        }
     }
 
 }

@@ -1,7 +1,5 @@
 package com.example.triplan.model
 
-import com.squareup.moshi.Json
-
 data class Plan(
     val id: Int,
     val title: String,

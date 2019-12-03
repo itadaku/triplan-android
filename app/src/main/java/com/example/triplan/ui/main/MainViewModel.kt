@@ -12,7 +12,7 @@ import com.example.triplan.model.Plan
 import com.example.triplan.model.TopPlan
 
 class MainViewModel: ViewModel() {
-    private val testRepository: TestRepository = TestRepository()
+    private val testRepository = TestRepository()
     private val userRepository = UserRepository()
     private val planRepository = PlanRepository()
     val userStore = UserStore
