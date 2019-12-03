@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.content_plan.ContentPlanActivity">
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/contentPlanMainImage"
         android:layout_width="match_parent"
@@ -158,13 +159,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/contentPlanScheduleRecyclerView"
+        android:id="@+id/contentPlanSchedulesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/content_plan_schedule_recycler_view_height"
         android:layout_marginTop="@dimen/content_plan_schedule_recycler_view_margin_top"
         app:layout_constraintTop_toBottomOf="@id/contentPlanInfoLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/contentPlanSuggestButton"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_content_plan_schedule" />
 
     <Button

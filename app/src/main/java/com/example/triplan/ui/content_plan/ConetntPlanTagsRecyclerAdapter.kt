@@ -1,4 +1,4 @@
-package com.example.triplan.ui.top
+package com.example.triplan.ui.content_plan
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +8,9 @@ import com.example.triplan.lib.ViewHolder
 import com.example.triplan.lib.getSafety
 import kotlinx.android.synthetic.main.item_tag.view.*
 
-class TagListRecyclerViewAdapter(
-    private val tags: List<String>
-): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ConetntPlanTagsRecyclerAdapter(
+    val tags: List<String>
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         return tags.size
     }
