@@ -4,7 +4,12 @@ import com.example.triplan.api.model.Body.FeedBackBody
 import com.example.triplan.api.model.Body.RequestBody
 import com.example.triplan.api.model.Json.*
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Headers
+import retrofit2.http.Path
+import retrofit2.http.Body
+import retrofit2.http.Query
 
 interface CommonService {
     @GET("/api/v1/lines")
