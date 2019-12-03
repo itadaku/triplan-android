@@ -37,5 +37,49 @@ class JsonMapper {
         fun toMapping(json: StationsJson) = Stations (
             json.stations.map { Station(it.id, it.name) }.toList()
         )
+
+        fun toMapping(json: PlanJson) = Plan(
+            json.id,
+            json.title,
+            json.image,
+            json.review,
+            json.daysNights,
+            json.minBudget,
+            json.maxBudget,
+            json.numberOfPeople,
+            json.purpose
+        )
+
+        fun toMapping(json: TopPlanJson) = TopPlan(
+            json.title,
+            json.plans.map {
+                Plan(
+                    it.id,
+                    it.title,
+                    it.image,
+                    it.review,
+                    it.daysNights,
+                    it.minBudget,
+                    it.maxBudget,
+                    it.numberOfPeople,
+                    it.purpose
+                )}.toList()
+        )
+
+        fun toMapping(json: List<TopPlanJson>) = json.map { topPlanJson ->
+            TopPlan(topPlanJson.title, topPlanJson.plans.map{
+                Plan(
+                    it.id,
+                    it.title,
+                    it.image,
+                    it.review,
+                    it.daysNights,
+                    it.minBudget,
+                    it.maxBudget,
+                    it.numberOfPeople,
+                    it.purpose)
+            }.toList())
+        }.toList()
     }
+
 }

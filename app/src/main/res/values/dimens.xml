@@ -95,9 +95,11 @@
     <dimen name="tag_item_margin_horizontal">4dp</dimen>
 
     <!--  contents of TopFragment   -->
+    <dimen name="top_contents_main_layout_margin_top">10dp</dimen>
+    <dimen name="top_contents_main_layout_margin_bottom">10dp</dimen>
     <dimen name="top_contents_margin_start">20dp</dimen>
     <dimen name="top_contents_title_text_size">18sp</dimen>
-    <dimen name="top_contents_recycler_view_margin_top">10dp</dimen>
+    <dimen name="top_contents_recycler_view_margin_top">20dp</dimen>
 
     <!-- a content of TopFragment -->
     <dimen name="top_content_layout_width">345dp</dimen>

@@ -26,10 +26,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.getTest({
-        }, {
-            Toast.makeText(this, it.errorMessage(this), Toast.LENGTH_SHORT).show()
-        })
 
         supportFragmentManager.beginTransaction()
             .replace(mainHostFragmentLayout.id, TopFragment())

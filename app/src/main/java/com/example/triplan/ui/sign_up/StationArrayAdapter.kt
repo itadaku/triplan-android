@@ -1,7 +1,6 @@
 package com.example.triplan.ui.sign_up
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,6 @@ class StationArrayAdapter (
     override fun getItem(position: Int): Station? = stations.getSafety(position)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        Log.d("aaa", stations.toString())
         val station = stations.getSafety(position)
         val view = when(convertView) {
             null -> {

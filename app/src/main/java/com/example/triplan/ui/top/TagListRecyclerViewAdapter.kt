@@ -5,6 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import com.example.triplan.lib.getSafety
+import kotlinx.android.synthetic.main.item_tag.view.*
 
 class TagListRecyclerViewAdapter(
     private val tags: List<String>
@@ -19,6 +21,8 @@ class TagListRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-
+        tags.getSafety(position)?.let {
+            holder.itemView.tagItem.text = it
+        }
     }
 }
