@@ -15,9 +15,9 @@ interface CommonService {
 
     @Headers("Content-type: application/json")
     @POST("/api/v1/app/contact")
-    fun sendContactData(@Body settingBody: RequestBody): Call<RequestJson>
+    fun sendRequestData(@Query("token") token: String, @Body settingBody: RequestBody): Call<RequestJson>
 
     @Headers("Content-type: application/json")
     @POST("/api/v1/app/feedback")
-    fun sendFeedbackData(@Body settingBody: FeedBackBody): Call<FeedBackJson>
+    fun sendFeedBackData(@Query("token") token: String, @Body settingBody: FeedBackBody): Call<FeedBackJson>
 }

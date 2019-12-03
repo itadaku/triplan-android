@@ -12,12 +12,12 @@ class SettingFeedbackViewModel: ViewModel() {
     val setting = MutableLiveData<Setting>()
 
     fun sendFeedbackData(
-        settingFeedbackBody: FeedBackBody,
+        settingFeedBackBody: FeedBackBody,
         success: ((ApiResponse.Success<Setting>) -> Unit),
         failure: ((ApiResponse.Failure) -> Unit)
     ): ApiResponse {
         var response: ApiResponse = ApiResponse.Failure(ApiResponse.ResponseType.Failure)
-        settingRepository.sendFeedbackData(settingFeedbackBody, {
+        settingRepository.sendFeedBackData(settingFeedBackBody, {
             setting.postValue(it.data)
             success.invoke(it)
         }, {

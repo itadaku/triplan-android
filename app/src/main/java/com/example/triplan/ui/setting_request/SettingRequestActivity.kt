@@ -39,7 +39,7 @@ class SettingRequestActivity : AppCompatActivity() {
 
         settingRequestButton.setOnClickListener { view ->
             view.isEnabled = false
-            val text = settingRequestText.text.toString().trim()
+            val text = settingRequestForm.text.toString().trim()
             if (text.isEmpty()) {
                 Toast.makeText(this, "文章を入力してください", Toast.LENGTH_SHORT).show()
                 view.isEnabled = true

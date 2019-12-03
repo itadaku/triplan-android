@@ -7,12 +7,10 @@ import com.example.triplan.api.model.Body.FeedBackBody
 import com.example.triplan.api.model.Body.RequestBody
 import com.example.triplan.api.model.Json.*
 import com.example.triplan.api.service.CommonService
+import com.example.triplan.data.UserStore
 import com.example.triplan.lib.JsonMapper
 import com.example.triplan.lib.responseType
-import com.example.triplan.model.Line
-import com.example.triplan.model.Lines
-import com.example.triplan.model.Setting
-import com.example.triplan.model.Stations
+import com.example.triplan.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -85,9 +83,13 @@ class CommonRepository {
         success: ((ApiResponse.Success<Setting>) -> Unit),
         failure: ((ApiResponse.Failure) -> Unit)
     ) {
+        val token = UserStore.token.value
+        if (token.isNullOrEmpty()) {
+            return
+        }
         ApiClient<CommonService>()
             .getService(CommonService::class.java)
-            .sendContactData(requestBody)
+            .sendRequestData(token, requestBody)
             .enqueue(object : Callback<RequestJson>{
                 override fun onFailure(call: Call<RequestJson>, t: Throwable) {
                     Log.e("Network Failure", t.message.toString())
@@ -111,14 +113,18 @@ class CommonRepository {
             })
     }
 
-    fun sendFeedbackData(
+    fun sendFeedBackData(
         feedBackBody: FeedBackBody,
         success: ((ApiResponse.Success<Setting>) -> Unit),
         failure: ((ApiResponse.Failure) -> Unit)
     ) {
+        val token = UserStore.token.value
+        if (token.isNullOrEmpty()) {
+            return
+        }
         ApiClient<CommonService>()
             .getService(CommonService::class.java)
-            .sendFeedbackData(feedBackBody)
+            .sendFeedBackData(token, feedBackBody)
             .enqueue(object : Callback<FeedBackJson>{
                 override fun onFailure(call: Call<FeedBackJson>, t: Throwable) {
                     Log.e("Network Failure", t.message.toString())

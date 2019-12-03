@@ -8,7 +8,6 @@ import android.content.Context
 import android.content.Intent
 import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.MutableLiveData
@@ -38,11 +37,12 @@ class SettingFeedbackActivity : AppCompatActivity() {
             it.requestFocus()
         }
 
-        settingFeedbackText.setOnClickListener { view ->
+        settingFeedbackButton.setOnClickListener { view ->
             view.isEnabled = false
-            val text = settingFeedbackText.text.toString().trim()
+            val text = settingFeedbackForm.text.toString().trim()
             if (text.isEmpty()) {
                 Toast.makeText(this, "文章を入力してください", Toast.LENGTH_SHORT).show()
+                view.isEnabled = true
                 return@setOnClickListener
             }
 
