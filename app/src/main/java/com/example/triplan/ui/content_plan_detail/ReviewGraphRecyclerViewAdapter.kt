@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.triplan.R
 import com.example.triplan.lib.ViewHolder
+import com.example.triplan.model.ReviewGraph
 import kotlinx.android.synthetic.main.item_review.view.*
 import kotlinx.android.synthetic.main.item_review_graph.view.*
 

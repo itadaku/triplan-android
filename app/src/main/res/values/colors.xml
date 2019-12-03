@@ -7,5 +7,6 @@
     <color name="triplan_white">#FFFFFF</color>
     <color name="triplan_blue">#0064AC</color>
     <color name="triplan_gray">#6C6C6C</color>
+    <color name="triplan_light_gray">#8A8A8A</color>
     <color name="triplan_light_blue">#B8D4E8</color>
 </resources>
