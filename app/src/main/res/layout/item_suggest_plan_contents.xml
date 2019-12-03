@@ -6,7 +6,8 @@
     android:layout_width="@dimen/top_content_layout_width"
     android:layout_height="@dimen/top_content_layout_height"
     android:background="@drawable/background_item_top_contents"
-    android:layout_marginEnd="@dimen/top_content_layout_margin_end"
+    android:layout_marginBottom="30dp"
+    android:layout_gravity="center_horizontal"
     >
     <TextView
         android:id="@+id/contentTitleText"
@@ -118,8 +119,4 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

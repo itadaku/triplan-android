@@ -79,4 +79,9 @@
     <string name="content_plan_detail_map_text">マップ</string>
     <string name="content_plan_detail_review_text">レビュー</string>
 
+    <!--  SuggestAreaActivity  -->
+    <string name="suggest_area_title">Area</string>
+
+    <!--  SuggestPlanActivity  -->
+    <string name="suggest_plan_title">Suggest Plan</string>
 </resources>

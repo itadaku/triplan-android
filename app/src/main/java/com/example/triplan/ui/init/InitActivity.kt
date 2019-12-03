@@ -18,11 +18,10 @@ class InitActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(InitViewModel::class.java)
         viewModel.userStore.setToken(applicationContext)
         val token = viewModel.userStore.token.value
-        MainActivity.start(this)
-//        if (token.isNullOrEmpty()) {
-//            WelcomeActivity.start(this)
-//        } else {
-//            MainActivity.start(this)
-//        }
+        if (token.isNullOrEmpty()) {
+            WelcomeActivity.start(this)
+        } else {
+            MainActivity.start(this)
+        }
     }
 }

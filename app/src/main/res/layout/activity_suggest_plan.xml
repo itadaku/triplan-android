@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.suggest_area.SuggestAreaActivity">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/suggestAreaRequestBack"
+        android:layout_width="@dimen/content_plan_back_width"
+        android:layout_height="@dimen/content_plan_back_height"
+        android:background="@drawable/ic_back_black"
+        android:layout_marginStart="@dimen/setting_request_back_margin_start"
+        android:layout_marginTop="@dimen/setting_request_back_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/suggestPlanTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/suggest_plan_title"
+        android:textSize="@dimen/setting_request_title_text_size"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="@dimen/top_fragment_title_text_margin_start"
+        android:layout_marginTop="49dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/suggestPlanRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/suggestPlanTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_suggest_plan_contents"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

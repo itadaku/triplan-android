@@ -131,8 +131,7 @@
             android:layout_marginEnd="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/suggestTextBudget"
-            app:layout_constraintBottom_toBottomOf="@id/suggestTextBudget"
-            />
+            app:layout_constraintBottom_toBottomOf="@id/suggestTextBudget" />
 
 
         <TextView
@@ -192,6 +191,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
+        android:id="@+id/suggestButton"
         android:layout_width="@dimen/suggest_button_width"
         android:layout_height="@dimen/suggest_general_height"
         android:text="@string/suggest_button_propose"

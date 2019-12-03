@@ -19,6 +19,8 @@ data class PlanJson(
     val maxBudget: Int,
     @Json(name = "number_of_people")
     val numberOfPeople: Int,
+    @Json(name = "address")
+    val address: String = "",
     @Json(name = "purpose")
     val purpose: List<String>
 )

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-
+        userStore.token.value?.let {
+            Log.d("ttt", it)
+        }
         supportFragmentManager.beginTransaction()
             .replace(mainHostFragmentLayout.id, TopFragment())
             .commit()
