@@ -2,15 +2,15 @@ package com.example.triplan.api.model.Body
 
 import com.squareup.moshi.Json
 
-data class SettingBody (
+class RequestBody (
     @Json(name = "text")
     val text: String
 ) {
     companion object {
         fun setBody(
             text: String
-        ): SettingBody {
-            return SettingBody(text)
+        ): RequestBody {
+            return RequestBody(text)
         }
     }
 }

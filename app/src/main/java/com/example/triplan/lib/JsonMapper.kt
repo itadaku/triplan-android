@@ -38,7 +38,11 @@ class JsonMapper {
             json.stations.map { Station(it.id, it.name) }.toList()
         )
 
-        fun toMapping(json: SettingJson) = Setting(
+        fun toMapping(json: RequestJson) = Setting(
+            done = json.done
+        )
+
+        fun toMapping(json: FeedBackJson) = Setting(
             done = json.done
         )
     }

@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProviders
-import com.example.triplan.api.model.Body.SettingBody
+import com.example.triplan.api.model.Body.FeedBackBody
 import com.example.triplan.model.Setting
 import kotlinx.android.synthetic.main.activity_setting_feedback.*
 
@@ -46,7 +46,7 @@ class SettingFeedbackActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val settingFeedbackBody = SettingBody(text)
+            val settingFeedbackBody = FeedBackBody(text)
 
             viewModel.sendFeedbackData(settingFeedbackBody, {
                 Toast.makeText(this, "送信に成功しました", Toast.LENGTH_SHORT).show()

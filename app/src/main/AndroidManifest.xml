@@ -40,7 +40,7 @@
             android:name=".ui.content_plan_traffic.ContentPlanTrafficActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.setting_contact.SettingContactActivity"
+            android:name=".ui.setting_request.SettingRequestActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.setting_feedback.SettingFeedbackActivity"
