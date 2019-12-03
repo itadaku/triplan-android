@@ -8,12 +8,8 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
+import com.example.triplan.model.Traffic
 import kotlinx.android.synthetic.main.activity_content_plan_traffic.*
-
-data class Traffic(
-    val station: String,
-    val detail: String
-)
 
 class ContentPlanTrafficActivity : AppCompatActivity() {
     lateinit var viewModel: ContentPlanTrafficViewModel

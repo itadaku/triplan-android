@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.triplan.R
+import com.example.triplan.model.SettingElement
+import com.example.triplan.model.SettingElementId
+import com.example.triplan.ui.setting_request.SettingRequestActivity
+import com.example.triplan.ui.setting_feedback.SettingFeedbackActivity
 import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment: Fragment() {
@@ -20,9 +24,30 @@ class SettingFragment: Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val settingLists = resources.getStringArray(R.array.setting_item_array_text)
-            .toList()
-        val settingRecyclerViewAdapter = SettingRecyclerViewAdapter(settingLists)
+
+        val settingList = listOf<SettingElement>(
+            SettingElement(SettingElementId.EDIT_USER_INFORMATION, "ユーザ情報編集"),
+            SettingElement(SettingElementId.CONTACT, "ご意見・ご要望"),
+            SettingElement(SettingElementId.FEEDBACK, "不具合報告"),
+            SettingElement(SettingElementId.TERMS_OF_SERVICE, "利用規約")
+        )
+        val itemOnClickListener = { view: View, settingElement: SettingElement ->
+            when(settingElement.id) {
+                SettingElementId.EDIT_USER_INFORMATION -> {
+
+                }
+                SettingElementId.CONTACT -> {
+                    SettingRequestActivity.start(view.context)
+                }
+                SettingElementId.FEEDBACK -> {
+                    SettingFeedbackActivity.start(view.context)
+                }
+                SettingElementId.TERMS_OF_SERVICE -> {
+
+                }
+            }
+        }
+        val settingRecyclerViewAdapter = SettingRecyclerViewAdapter(settingList, itemOnClickListener)
         settingRecyclerView.adapter = settingRecyclerViewAdapter
     }
 }

@@ -112,6 +112,14 @@ class JsonMapper {
             }
             return PlanInfo(plan, schedulesList)
         }
+
+        fun toMapping(json: RequestJson) = Setting(
+            done = json.done
+        )
+
+        fun toMapping(json: FeedBackJson) = Setting(
+            done = json.done
+        )
     }
 
 }

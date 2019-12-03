@@ -143,6 +143,7 @@
     <dimen name="content_plan_schedule_recycler_view_height">0dp</dimen>
     <dimen name="content_plan_schedule_recycler_view_margin_top">30dp</dimen>
     <dimen name="content_plan_suggest_button_text_size">16sp</dimen>
+
     <!-- SettingFragment -->
     <dimen name="setting_fragment_title_text_text_size">25sp</dimen>
     <dimen name="setting_fragment_title_text_margin_start">25dp</dimen>
@@ -161,6 +162,25 @@
     <dimen name="setting_item_text_text_size">16sp</dimen>
     <dimen name="setting_item_text_padding_start">10dp</dimen>
     <dimen name="setting_item_background_radius">15dp</dimen>
+
+    <!-- SettingContactActivity -->
+    <!-- SettingFeedbackActivity -->
+    <dimen name="setting_request_back_margin_start">12dp</dimen>
+    <dimen name="setting_request_back_margin_top">25dp</dimen>
+    <dimen name="setting_request_title_height">72dp</dimen>
+    <dimen name="setting_request_title_text_size">32sp</dimen>
+    <dimen name="setting_request_title_padding_start">20dp</dimen>
+    <dimen name="setting_request_title_margin_top">49dp</dimen>
+    <dimen name="setting_request_text_text_size">20sp</dimen>
+    <dimen name="setting_request_text_padding_start">15dp</dimen>
+    <dimen name="setting_request_text_margin_start">19dp</dimen>
+    <dimen name="setting_request_text_margin_top">4dp</dimen>
+    <dimen name="setting_request_form_height">252dp</dimen>
+    <dimen name="setting_request_form_margin_layout_start">40dp</dimen>
+    <dimen name="setting_request_form_margin_layout_end">30dp</dimen>
+    <dimen name="setting_request_form_margin_layout_top">25dp</dimen>
+    <dimen name="setting_request_button_height">50dp</dimen>
+    <dimen name="setting_request_button_text_size">20sp</dimen>
 
     <!-- ContentPlanDetailActivity -->
     <dimen name="content_plan_detail_image_view_height">292dp</dimen>
