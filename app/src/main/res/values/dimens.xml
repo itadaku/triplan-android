@@ -268,4 +268,6 @@
     <dimen name="spinner_item_text_view_padding_top">15dp</dimen>
     <dimen name="spinner_item_text_view_padding_bottom">15dp</dimen>
 
+    <!-- item of suggest area  -->
+    <dimen name="suggest_area_item_text_text_size">18dp</dimen>
 </resources>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topContentLayout"
+    android:layout_width="@dimen/top_content_layout_width"
+    android:layout_height="@dimen/top_content_layout_height"
+    android:background="@drawable/background_item_top_contents"
+    android:layout_marginEnd="@dimen/top_content_layout_margin_end">
+    <TextView
+        android:id="@+id/contentTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@sample/contents.json/content/title"
+        android:textSize="@dimen/top_content_title_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/triplan_white"
+        android:layout_marginStart="@dimen/top_content_margin_start"
+        android:layout_marginBottom="@dimen/top_content_title_text_margin_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tagListRecyclerView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tagListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/top_content_margin_start"
+        android:layout_marginBottom="@dimen/top_content_tag_recycler_view_margin_bottom"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/contentInfoLayout"
+        tools:listitem="@layout/item_tag" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/top_content_margin_start"
+        android:layout_marginBottom="@dimen/top_content_info_layout_margin_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/contentReviewImageView"
+            android:layout_width="@dimen/top_content_review_image_view_width"
+            android:layout_height="@dimen/top_content_review_image_view_height"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/contentReviewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@sample/contents.json/content/review"
+            android:textStyle="bold"
+            android:textColor="@color/triplan_white"
+            android:textSize="@dimen/top_content_text_size"
+            android:layout_marginStart="@dimen/top_content_review_text_margin_start"
+            app:layout_constraintStart_toEndOf="@id/contentReviewImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/contentPeopleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@sample/contents.json/content/people"
+            android:textStyle="bold"
+            android:textColor="@color/triplan_white"
+            android:textSize="@dimen/top_content_text_size"
+            android:layout_marginStart="@dimen/top_content_people_text_margin_start"
+            app:layout_constraintStart_toEndOf="@id/contentReviewText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/contentPlaceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@sample/contents.json/content/location"
+            android:textStyle="bold"
+            android:textColor="@color/triplan_white"
+            android:textSize="@dimen/top_content_text_size"
+            android:layout_marginStart="@dimen/top_content_place_text_margin_start"
+            app:layout_constraintStart_toEndOf="@id/contentPeopleText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/contentStaysText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@sample/contents.json/content/stay"
+            android:textStyle="bold"
+            android:textColor="@color/triplan_white"
+            android:textSize="@dimen/top_content_text_size"
+            android:layout_marginStart="@dimen/top_content_stays_text_margin_start"
+            app:layout_constraintStart_toEndOf="@id/contentPlaceText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/contentBudgetText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@sample/contents.json/content/budget"
+            android:textStyle="bold"
+            android:textColor="@color/triplan_white"
+            android:textSize="@dimen/top_content_text_size"
+            android:layout_marginEnd="@dimen/top_content_budget_text_margin_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

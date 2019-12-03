@@ -47,6 +47,7 @@ class JsonMapper {
             json.minBudget,
             json.maxBudget,
             json.numberOfPeople,
+            json.address,
             json.purpose
         )
 
@@ -62,6 +63,7 @@ class JsonMapper {
                     it.minBudget,
                     it.maxBudget,
                     it.numberOfPeople,
+                    it.address,
                     it.purpose
                 )}.toList()
         )
@@ -77,6 +79,7 @@ class JsonMapper {
                     it.minBudget,
                     it.maxBudget,
                     it.numberOfPeople,
+                    it.address,
                     it.purpose)
             }.toList())
         }.toList()
@@ -91,6 +94,7 @@ class JsonMapper {
                 json.plan.minBudget,
                 json.plan.maxBudget,
                 json.plan.numberOfPeople,
+                json.plan.address,
                 json.plan.purpose)
 
             val schedulesList = mutableListOf<Schedules>()
@@ -120,6 +124,41 @@ class JsonMapper {
         fun toMapping(json: FeedBackJson) = Setting(
             done = json.done
         )
+
+        fun toMapping(json: SuggestAreaJson) = SuggestArea(
+            id = json.id,
+            name = json.name,
+            matchScore = json.matchScore,
+            population = json.population,
+            congestionRate = json.congestionRate
+        )
+
+        fun toMapping(json: SuggestPlanJson) = json.proposePlans
+
+        fun toPlanListMapping(json: List<PlanJson>) = json.map {
+            Plan(
+                it.id,
+                it.title,
+                it.image,
+                it.review,
+                it.daysNights,
+                it.minBudget,
+                it.maxBudget,
+                it.numberOfPeople,
+                it.address,
+                it.purpose
+            )
+        }
+
+        fun toSuggestPlanAreaMapping(json: List<SuggestAreaJson>) = json.map {
+            SuggestArea(
+                id = it.id,
+                name = it.name,
+                matchScore = it.matchScore,
+                population = it.population,
+                congestionRate = it.congestionRate
+            )
+        }.toList()
     }
 
 }

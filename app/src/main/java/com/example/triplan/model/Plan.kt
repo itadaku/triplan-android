@@ -9,5 +9,6 @@ data class Plan(
     val minBudget: Int,
     val maxBudget: Int,
     val numberOfPeople: Int,
+    val address: String,
     val purpose: List<String>
 )

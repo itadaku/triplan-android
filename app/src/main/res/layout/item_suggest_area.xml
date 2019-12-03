@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/background_item_setting"
+    android:layout_marginStart="@dimen/setting_item_margin_horizon"
+    android:layout_marginEnd="@dimen/setting_item_margin_horizon"
+    android:layout_marginBottom="@dimen/setting_item_margin_bottom"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="20dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itemSuggestAreCircle"
+        android:layout_width="@dimen/setting_item_circle_width"
+        android:layout_height="@dimen/setting_item_circle_height"
+        android:background="@drawable/background_item_setting_circle"
+        android:layout_marginStart="@dimen/setting_item_circle_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/itemSuggestAreNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@+id/itemSuggestAreCircle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/itemSuggestArePopulationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_community"
+        android:layout_marginEnd="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/itemSuggestArePopulationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/itemSuggestArePopulationImage"
+        app:layout_constraintTop_toTopOf="@id/itemSuggestAreNameText"
+        app:layout_constraintBottom_toBottomOf="@id/itemSuggestAreNameText"
+        />
+
+    <TextView
+        android:id="@+id/itemSuggestAreScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:text="スコア"
+        app:layout_constraintEnd_toEndOf="@id/itemSuggestArePopulationImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/itemSuggestArePopulationImage"/>
+
+
+    <TextView
+        android:id="@+id/itemSuggestAreScoreValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/triplan_black"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/itemSuggestAreScoreText"
+        app:layout_constraintStart_toStartOf="@id/itemSuggestArePopulationText"
+        app:layout_constraintTop_toTopOf="@id/itemSuggestAreScoreText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/itemSuggestAreCongestionRateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        android:text="宿の定員稼働"
+        app:layout_constraintEnd_toEndOf="@id/itemSuggestArePopulationImage"
+        app:layout_constraintTop_toBottomOf="@id/itemSuggestArePopulationImage"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemSuggestAreCongestionRateValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/suggest_area_item_text_text_size"
+        android:textColor="@color/triplan_black"
+        app:layout_constraintStart_toStartOf="@id/itemSuggestArePopulationText"
+        app:layout_constraintTop_toTopOf="@id/itemSuggestAreCongestionRateText"
+        app:layout_constraintBottom_toBottomOf="@id/itemSuggestAreCongestionRateText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
