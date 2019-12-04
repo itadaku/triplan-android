@@ -9,6 +9,7 @@ import com.example.triplan.api.repository.UserRepository
 import com.example.triplan.data.PlanStore
 import com.example.triplan.data.UserStore
 import com.example.triplan.model.Plan
+import com.example.triplan.model.PlanInfo
 import com.example.triplan.model.TopPlan
 
 class MainViewModel: ViewModel() {
@@ -39,5 +40,26 @@ class MainViewModel: ViewModel() {
                 }
             }
         }
+    }
+
+    fun getPlanNow(
+        success: ((ApiResponse.Success<PlanInfo>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ){
+        userStore.token.value?.let { token ->
+            planRepository.getPlanNow(token, success, failure)
+        }
+    }
+
+    fun getPlanInfo(
+        planId: Int,
+        success: ((ApiResponse.Success<PlanInfo>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ) {
+        planRepository.getPlanInfo(planId, {
+            success.invoke(it)
+        }, {
+            failure.invoke(it)
+        })
     }
 }

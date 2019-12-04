@@ -19,10 +19,7 @@ import kotlinx.android.synthetic.main.fragment_top.*
 class TopFragment: Fragment() {
     lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         return inflater.inflate(R.layout.fragment_top, container, false)

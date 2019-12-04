@@ -22,11 +22,22 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <TextView
+        android:id="@+id/reviewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/triplan_black"
+        app:layout_constraintStart_toEndOf="@id/reviewIcon"
+        app:layout_constraintTop_toTopOf="@id/reviewIcon"
+        app:layout_constraintBottom_toBottomOf="@id/reviewIcon"
+        android:layout_marginStart="30dp"
+        />
+    <TextView
         android:id="@+id/reviewComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="@sample/review.json/data/comment"
-        android:textSize="@dimen/review_comment_text_size"
+        android:textSize="16sp"
         android:textColor="@color/triplan_black"
         android:layout_marginStart="@dimen/review_comment_margin_start"
         android:layout_marginEnd="@dimen/review_comment_margin_end"

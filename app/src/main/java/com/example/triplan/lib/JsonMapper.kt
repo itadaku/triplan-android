@@ -135,7 +135,18 @@ class JsonMapper {
 
         fun toMapping(json: SuggestPlanJson) = json.proposePlans
 
-        fun toPlanListMapping(json: List<PlanJson>) = json.map {
+        fun toMapping(json: PlanDetailJson) = PlanDetail(
+            json.id,
+            json.title,
+            json.body,
+            json.review,
+            json.link,
+            json.imagePaths.map { ImagePath(it.imageType, it.imagePath) }.toList(),
+            json.userReviews.map { UserReview(it.sentence, it.icon, it.body, it.evaluation) },
+            json.address
+        )
+
+                      fun toPlanListMapping(json: List<PlanJson>) = json.map {
             Plan(
                 it.id,
                 it.title,
@@ -159,6 +170,8 @@ class JsonMapper {
                 congestionRate = it.congestionRate
             )
         }.toList()
+
+
     }
 
 }

@@ -84,4 +84,7 @@
 
     <!--  SuggestPlanActivity  -->
     <string name="suggest_plan_title">Suggest Plan</string>
+
+    <!--  now framgent  -->
+    <string name="now_fragment_title_text">Now</string>
 </resources>

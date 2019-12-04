@@ -77,6 +77,8 @@ dependencies {
 
     // fire base
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    implementation 'com.google.firebase:firebase-storage:16.1.0'
+    implementation 'com.firebaseui:firebase-ui-storage:4.1.0'
 
     // android architecture
     implementation "android.arch.lifecycle:extensions:$androidLifecycleVersion"

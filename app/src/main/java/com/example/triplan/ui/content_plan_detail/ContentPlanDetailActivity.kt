@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
@@ -34,9 +35,6 @@ class ContentPlanDetailActivity : AppCompatActivity() {
             finish()
         }
 
-        val reviews = listOf<Review>()
-        val reviewListRecyclerViewAdapter = ReviewListRecyclerViewAdapter(reviews)
-        contentPlanDetailReviewRecyclerView.adapter = reviewListRecyclerViewAdapter
 
         val reviewGraphs = listOf<ReviewGraph>()
         val reviewGraphRecyclerViewAdapter = ReviewGraphRecyclerViewAdapter(reviewGraphs)
@@ -47,10 +45,22 @@ class ContentPlanDetailActivity : AppCompatActivity() {
         val reviewStarRecyclerViewAdapter = ReviewStarRecyclerViewAdapter(reviewStarNum)
         contentPlanDetailReviewStarRecyclerView.adapter = reviewStarRecyclerViewAdapter
 
-        viewModel.planStore.selectedPlan.value?.let {
-            
-            contentPlanDetailTextTitle.text = it.title
-            contentPlanDetailTextDescription.text = it.body
+        viewModel.planStore.selectedSchedule.value?.let {
+            viewModel.getPlanDetail(it.id, {
+                val detail = it.data
+                contentPlanDetailTextTitle.text = detail.title
+                contentPlanDetailTextDescription.text = detail.body
+                contentPlanDetailTextWeb.text = detail.link
+                contentPlanDetailTextMapAddress.text = detail.address
+                contentPlanDetailReviewValueNum.text = detail.review.toString()
+                val reviewListRecyclerViewAdapter = ReviewListRecyclerViewAdapter(detail.userReviews.map {
+                    Review(it.icon, it.sentence, it.body)
+                })
+                contentPlanDetailReviewRecyclerView.adapter = reviewListRecyclerViewAdapter
+            }, {
+                Toast.makeText(this, it.errorMessage(this), Toast.LENGTH_SHORT).show()
+            })
+
         }
     }
 

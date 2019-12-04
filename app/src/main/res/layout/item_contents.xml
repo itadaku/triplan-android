@@ -7,6 +7,13 @@
     android:layout_height="@dimen/top_content_layout_height"
     android:background="@drawable/background_item_top_contents"
     android:layout_marginEnd="@dimen/top_content_layout_margin_end">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/contentImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
     <TextView
         android:id="@+id/contentTitleText"
         android:layout_width="wrap_content"

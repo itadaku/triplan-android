@@ -9,10 +9,7 @@ import com.example.triplan.api.model.Json.*
 import com.example.triplan.api.service.PlanService
 import com.example.triplan.lib.JsonMapper
 import com.example.triplan.lib.responseType
-import com.example.triplan.model.Plan
-import com.example.triplan.model.PlanInfo
-import com.example.triplan.model.SuggestArea
-import com.example.triplan.model.TopPlan
+import com.example.triplan.model.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -61,6 +58,35 @@ class PlanRepository {
                 }
 
                 override fun onResponse(call: Call<PlanInfoJson>, response: Response<PlanInfoJson>) {
+                    when(response.responseType) {
+                        ApiResponse.ResponseType.Success -> {
+                            response.body()?.let {
+                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType))
+                            }
+                        }
+                        else -> {
+                            failure.invoke(ApiResponse.Failure(response.responseType))
+                        }
+                    }
+                }
+            })
+    }
+
+    fun getPlanDetail(
+        scheduleId: Int,
+        success: ((ApiResponse.Success<PlanDetail>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ) {
+        ApiClient<PlanService>()
+            .getService(PlanService::class.java)
+            .getPlanDetail(scheduleId)
+            .enqueue(object : Callback<PlanDetailJson> {
+                override fun onFailure(call: Call<PlanDetailJson>, t: Throwable) {
+                    Log.e("Network Failure", t.message.toString())
+                    failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
+                }
+
+                override fun onResponse(call: Call<PlanDetailJson>, response: Response<PlanDetailJson>) {
                     when(response.responseType) {
                         ApiResponse.ResponseType.Success -> {
                             response.body()?.let {
@@ -146,4 +172,64 @@ class PlanRepository {
                 }
             })
     }
+
+    fun getPlanNow(
+        token: String,
+        success: ((ApiResponse.Success<PlanInfo>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ) {
+        ApiClient<PlanService>()
+            .getService(PlanService::class.java)
+            .getPlanNow(token)
+            .enqueue(object : Callback<PlanInfoJson>{
+                override fun onFailure(call: Call<PlanInfoJson>, t: Throwable) {
+                    Log.e("Network Failure", t.message.toString())
+                    failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
+                }
+
+                override fun onResponse(call: Call<PlanInfoJson>, response: Response<PlanInfoJson>) {
+                    when(response.responseType) {
+                        ApiResponse.ResponseType.Success -> {
+                            response.body()?.let {
+                                success.invoke(ApiResponse.Success(JsonMapper.toMapping(it), response.responseType))
+                            }
+                        }
+                        else -> {
+                            failure.invoke(ApiResponse.Failure(response.responseType))
+                        }
+                    }
+                }
+            })
+    }
+
+    fun selectPlanNow(
+        token: String,
+        planId: Int,
+        success: ((ApiResponse.Success<SelectPlanNowJson>) -> Unit),
+        failure: ((ApiResponse.Failure) -> Unit)
+    ) {
+        ApiClient<PlanService>()
+            .getService(PlanService::class.java)
+            .selectPlanNow(token, planId)
+            .enqueue(object : Callback<SelectPlanNowJson>{
+                override fun onFailure(call: Call<SelectPlanNowJson>, t: Throwable) {
+                    Log.e("Network Failure", t.message.toString())
+                    failure.invoke(ApiResponse.Failure(ApiResponse.ResponseType.Failure))
+                }
+
+                override fun onResponse(call: Call<SelectPlanNowJson>, response: Response<SelectPlanNowJson>) {
+                    when(response.responseType) {
+                        ApiResponse.ResponseType.Success -> {
+                            response.body()?.let {
+                                success.invoke(ApiResponse.Success(it, response.responseType))
+                            }
+                        }
+                        else -> {
+                            failure.invoke(ApiResponse.Failure(response.responseType))
+                        }
+                    }
+                }
+            })
+    }
+
 }

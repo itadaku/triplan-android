@@ -21,7 +21,7 @@ class ContentPlanTrafficActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK)
             finish()
         }
-        viewModel.planStore.selectedPlan.value?.let {
+        viewModel.planStore.selectedSchedule.value?.let {
             val traffics = listOf(Traffic(it.title, it.body))
             val contentPlanTrafficRecyclerViewAdapter = ContentPlanTrafficRecyclerViewAdapter(traffics)
             contentPlanTrafficRecyclerView.adapter = contentPlanTrafficRecyclerViewAdapter

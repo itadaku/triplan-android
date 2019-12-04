@@ -2,6 +2,7 @@ package com.example.triplan.ui.init
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
 import com.example.triplan.data.UserStore

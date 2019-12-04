@@ -1,18 +1,14 @@
 package com.example.triplan.ui.content_plan
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.triplan.R
-import com.example.triplan.model.Schedule
 import com.example.triplan.model.ScheduleType
 import com.example.triplan.ui.content_plan_detail.ContentPlanDetailActivity
 import com.example.triplan.ui.content_plan_traffic.ContentPlanTrafficActivity
@@ -37,16 +33,18 @@ class ContentPlanActivity : AppCompatActivity() {
             contentPlanDetailPeopleText.text = "${it.plan.numberOfPeople}人"
             contentPlanDetailStayText.text = "${it.plan.daysNights}泊${it.plan.daysNights + 1}日"
             contentPlanDetailMoneyText.text = "${it.plan.minBudget} ~ ${it.plan.maxBudget}円"
+            contentPlanDetailLocationText.text = it.plan.address
+
 
             val contentPlanSchedulesRecyclerViewAdapter = ContentPlanSchedulesRecyclerViewAdapter(it.schedules, { view, schedule ->
                 when(schedule.type) {
                     ScheduleType.DETAIL -> {
-                        viewModel.planStore.selectedPlan.value = schedule
+                        viewModel.planStore.selectedSchedule.value = schedule
                         ContentPlanDetailActivity.start(this)
                     }
 
                     ScheduleType.TRAFFIC -> {
-                        viewModel.planStore.selectedPlan.value = schedule
+                        viewModel.planStore.selectedSchedule.value = schedule
                         ContentPlanTrafficActivity.start(this)
                     }
 
@@ -62,6 +60,14 @@ class ContentPlanActivity : AppCompatActivity() {
             viewModel.getPlanInfo(planId, {
                 setContentView(R.layout.activity_content_plan)
                 viewModel.planInfo.postValue(it.data)
+
+                contentPlanSuggestButton.setOnClickListener { view ->
+                    viewModel.selectPlanNow(planId, {
+
+                    }, {
+
+                    })
+                }
             }, { failure ->
                 Toast.makeText(this, failure.errorMessage(this), Toast.LENGTH_SHORT).show()
             })

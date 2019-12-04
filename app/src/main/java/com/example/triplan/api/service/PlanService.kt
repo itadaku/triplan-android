@@ -3,6 +3,7 @@ package com.example.triplan.api.service
 import com.example.triplan.api.model.Json.*
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
@@ -32,4 +33,16 @@ interface PlanService {
         @Query("from_date") fromDate: String,
         @Query("to_date") toDate: String
     ): Call<List<PlanJson>>
+
+    @GET("/api/v1/plan/detail")
+    fun getPlanDetail(@Query("id") id: Int): Call<PlanDetailJson>
+
+    @GET("/api/v1/plan/now")
+    fun getPlanNow(@Query("token") token: String): Call<PlanInfoJson>
+
+    @POST("/api/v1/plan/now")
+    fun selectPlanNow(
+        @Query("token") token: String,
+        @Query("plan_id") planId: Int
+    ): Call<SelectPlanNowJson>
 }
